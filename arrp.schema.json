@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assessment-Regime Reporting Profile (ARRP) outcome record",
+  "description": "Executable five-dimension outcome-level reporting schema derived from the assessment-regime identification problem. It is not a validated measurement instrument or consensus reporting standard.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outcome_id",
+    "A",
+    "D",
+    "O",
+    "G",
+    "N"
+  ],
+  "properties": {
+    "outcome_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "citation": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "construct_interpretation": {
+      "type": "string"
+    },
+    "A": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source_evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "available",
+            "removed",
+            "restricted",
+            "unclear"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "D": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "source_evidence"
+      ],
+      "properties": {
+        "category": {
+          "enum": [
+            "concurrent",
+            "immediate",
+            "exact",
+            "unclear"
+          ]
+        },
+        "elapsed_value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "elapsed_unit": {
+          "enum": [
+            "seconds",
+            "minutes",
+            "hours",
+            "days",
+            "weeks",
+            "months",
+            "years"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "category": {
+                "const": "exact"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "elapsed_value",
+              "elapsed_unit"
+            ]
+          }
+        }
+      ]
+    },
+    "O": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source_evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "same",
+            "repeated",
+            "similar",
+            "novel",
+            "unclear"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "G": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source_evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "none",
+            "near",
+            "far",
+            "domain-context-shift",
+            "unclear"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "N": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "scope",
+        "source_evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "prevented",
+            "monitored",
+            "verified",
+            "self-report",
+            "unclear"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

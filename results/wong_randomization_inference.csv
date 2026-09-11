@@ -1,0 +1,3 @@
+outcome,estimand,observed_raw_interaction,permutation_sd,studentized_abs_stat,randomization_p_two_sided,maxT_fwer_p,permutation_reps,permutation_seed,conditioned_on
+Originality,difference in (independent - assisted) change: learner-first minus unrestricted,1.5185993111366245,0.3173434611136054,4.785349305158625,2e-05,2e-05,99999,20262717,two randomized AI arms; fixed group sizes 65 learner-first / 67 unrestricted
+Usefulness,difference in (independent - assisted) change: learner-first minus unrestricted,1.2389207807118254,0.2791104123239131,4.438819642722729,2e-05,3e-05,99999,20262717,two randomized AI arms; fixed group sizes 65 learner-first / 67 unrestricted

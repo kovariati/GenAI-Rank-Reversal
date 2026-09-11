@@ -1,0 +1,6 @@
+code,dimension,recommended_values,question,interpretive_role
+A,AI availability at assessment,available / removed / restricted / unclear,Can construct-relevant AI contribute to the scored response?,Distinguishes joint human–AI performance from human performance under reduced assistance.
+D,Assessment delay,concurrent / immediate / exact elapsed time / unclear,How much time elapsed since the final relevant assisted exposure?,Required before strong persistence/retention interpretation.
+O,Task/item overlap,same / repeated / similar / novel / unclear,How much does assessed content overlap the supported content?,Repeated-item performance is not transfer.
+G,Generalization/transfer demand,none / near / far / domain/context shift / unclear,What generalization beyond the supported task is required?,Separates practice performance from transfer evidence.
+N,Evidence and scope of AI non-use,prevented / monitored / verified / self-report / unclear,How is absence/restriction of construct-relevant AI established?,Defines the scope of claims about independent performance.

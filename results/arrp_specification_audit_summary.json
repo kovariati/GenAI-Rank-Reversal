@@ -1,0 +1,10 @@
+{
+  "audit_type": "deterministic software/specification audit; not human inter-rater validation",
+  "checks_total": 62,
+  "checks_passed": 62,
+  "checks_failed": 0,
+  "structured_executable_cases": 20,
+  "metamorphic_pairs": 10,
+  "worked_examples_traceability_checked": 77,
+  "inference_boundary": "Supports frozen-rule completeness, implementation conformance, ambiguity handling, selective sensitivity/invariance, file integrity, and worked-example traceability only. It does not establish human inter-rater reliability, content validity, consensus status, or prevalence."
+}

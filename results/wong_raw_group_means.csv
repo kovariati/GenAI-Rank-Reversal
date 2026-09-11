@@ -1,0 +1,7 @@
+outcome,design,n,assisted_task_mean,independent_task_mean
+Originality,Human-only,64,3.0625,2.625
+Originality,Unrestricted ChatGPT,67,4.082089552238806,2.6865671641791047
+Originality,Learner-first AI,65,3.3,3.423076923076923
+Usefulness,Human-only,64,3.7890625,3.765625
+Usefulness,Unrestricted ChatGPT,67,4.291044776119403,3.8059701492537314
+Usefulness,Learner-first AI,65,3.6307692307692307,4.384615384615385

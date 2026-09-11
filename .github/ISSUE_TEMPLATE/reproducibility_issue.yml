@@ -1,0 +1,22 @@
+name: Reproducibility issue
+description: Report a mismatch with a shipped result or documented reproduction level
+title: "[Reproducibility] "
+labels: [reproducibility]
+body:
+  - type: dropdown
+    id: level
+    attributes:
+      label: Reproduction level
+      options: ["Level 1 - smoke/quality gate", "Level 2 - shipped-artifact validation", "Level 3 - third-party-data regeneration", "Level 4 - optional extension"]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include exact command, observed output, expected output, OS and Python version.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Never attach restricted third-party participant data."

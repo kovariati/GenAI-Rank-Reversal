@@ -1,0 +1,6 @@
+item,core_question,proposed_reporting
+AI availability at assessment,Could construct-relevant AI contribute to the scored outcome?,available / removed / restricted / unclear
+Assessment delay,How long after the final relevant assisted exposure was the outcome measured?,concurrent / immediate / exact elapsed time / unclear
+Task or item overlap,How much did the assessed task overlap supported work?,same / repeated / similar / novel / unclear
+Transfer demands,How far did the assessment generalize beyond supported work?,none / near / far / domain-context-shift / unclear
+Evidence of AI non-use,How was intended non-use controlled verified and scoped?,prevented / monitored / verified / self-report / unclear + scope

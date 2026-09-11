@@ -1,0 +1,3 @@
+design,independent_minus_supported_std,ci_low,ci_high,inference
+Unrestricted ChatGPT,-1.1211643451221278,-1.603898389502341,-0.7181160442585726,participant-stratified bootstrap profile contrast; 3999 valid replicates
+Scaffolded Iris,-0.802311318950131,-1.206564938436256,-0.452317321651408,participant-stratified bootstrap profile contrast; 3999 valid replicates

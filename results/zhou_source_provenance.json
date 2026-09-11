@@ -1,0 +1,36 @@
+{
+  "paper_citation": "Zhou, Y.; Liu, Q.; Huang, J.; Li, G. Creative scar without generative AI: Individual creativity fails to sustain while homogeneity keeps climbing. Technology in Society 2026, 84, 103087.",
+  "doi": "10.1016/j.techsoc.2025.103087",
+  "osf_project": "zv8a4",
+  "access": "author-approved OSF contributor access; raw participant-level data are not redistributed",
+  "archive_sha256": "8cdbb977391b1f6b5c9301740b5a4ad781219b6cac75425d091a36fd8f22c6da",
+  "study2_xlsx_sha256": "d6b3ef7f8cbd46540e477f962d57037483e648138b25a1c0a2bdb08a0b5d34e2",
+  "randomized_n": 61,
+  "control_n": 30,
+  "treatment_n": 31,
+  "treatment_days": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "no_ai_days": [
+    1,
+    7,
+    30,
+    60
+  ],
+  "bootstrap_replicates": 9999,
+  "bootstrap_seed": 20260817,
+  "condition_assignment_rule": "canonical randomized arm taken from Day 1; a single Day 60 task1 row for SubjectID 57 is inconsistent and is overridden analytically, not in the raw source",
+  "condition_inconsistencies": [
+    {
+      "SubjectID": 57,
+      "Day": 60,
+      "source_condition": 1,
+      "canonical_condition": 0
+    }
+  ],
+  "primary_extension_role": "restricted-access longitudinal extension; not part of frozen public-data primary screen"
+}

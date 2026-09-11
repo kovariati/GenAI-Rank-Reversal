@@ -1,0 +1,2 @@
+program,outcome,active_arm_contrast,assisted_estimate,assisted_ci_low,assisted_ci_high,independent_estimate,independent_ci_low,independent_ci_high,webb_six_point_wild_cluster_p,clusters,source_note
+Bastani,Mathematics practice / independent exam,Guarded tutor - unrestricted GenAI,0.22426315702969538,0.1553251685072639,0.29320114555212684,0.05002858046711053,0.003018294548093395,0.09703886638612766,0.1238,44,Derived from source-aligned classroom-cluster analysis; raw third-party participant data are not redistributed.

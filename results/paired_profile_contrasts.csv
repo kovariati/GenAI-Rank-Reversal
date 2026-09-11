@@ -1,0 +1,7 @@
+study,design,independent_minus_supported_std,ci_low,ci_high,inference
+Bastani et al. (2025),Unrestricted GenAI,-0.6716859122348835,,,descriptive standardized profile only; raw-scale study-specific profile analysis and small-cluster sensitivity reported separately
+Bastani et al. (2025),Pedagogically guarded AI tutor,-1.269625279086943,,,descriptive standardized profile only; raw-scale study-specific profile analysis and small-cluster sensitivity reported separately
+Bassner et al. (2026),Unrestricted ChatGPT,-1.1211643451221278,-1.603898389502341,-0.7181160442585726,participant-stratified bootstrap profile contrast; 3999 valid replicates
+Bassner et al. (2026),Scaffolded Iris,-0.802311318950131,-1.206564938436256,-0.452317321651408,participant-stratified bootstrap profile contrast; 3999 valid replicates
+Wong & Qiu (2026),Unrestricted ChatGPT,-0.7001875600378531,-1.184533880764343,-0.2536515309122826,participant-stratified bootstrap profile contrast; 9999 replicates; not interpreted as causal effect of AI removal
+Wong & Qiu (2026),"Think-first, ChatGPT-later",0.377321160626734,-0.0777789903198949,0.8712672496506132,participant-stratified bootstrap profile contrast; 9999 replicates; not interpreted as causal effect of AI removal

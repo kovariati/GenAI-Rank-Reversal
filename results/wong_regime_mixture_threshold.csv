@@ -1,0 +1,2 @@
+outcome,scale,intervention_A,intervention_B,assisted_A_mean,assisted_B_mean,independent_A_mean,independent_B_mean,D_A,D_I,w_star,interpretation
+Originality,raw Wong rating scale,Unrestricted ChatGPT,Learner-first AI,4.082089552238806,3.3,2.6865671641791047,3.423076923076923,0.7820895522388058,-0.7365097588978182,0.4849928177213275,Illustrative same-score-scale composition threshold; not a recommended pooled causal estimand.

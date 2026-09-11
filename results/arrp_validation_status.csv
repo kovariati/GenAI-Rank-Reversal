@@ -1,0 +1,9 @@
+validation_component,status,result_or_scope,inference_boundary
+Frozen field-level decision rules,COMPLETED,"A/D/O/G/N each have allowed values, source-evidence requirements, and explicit unclear rules",Operational specification only
+Structured executable feature tests,COMPLETED,20/20 feature-to-code cases PASS,Software/specification conformance only
+Metamorphic selective-sensitivity tests,COMPLETED,10/10 one-dimension perturbation pairs PASS,Shows target-field sensitivity and non-target invariance in the structured implementation
+Legacy ambiguity guardrails,COMPLETED,T05 and T12 remain unclear on all five dimensions,No regime imputation from labels alone
+Worked-example traceability audit,COMPLETED,77/77 records have unique IDs and complete DOI/source/provenance/regime-description fields,Completeness/traceability only; not independent recoding
+Public-release schema-integrity checks,COMPLETED,"Core reporting fields, A/D/O/G/N rationales, and explicit external-validity boundaries are present and internally consistent",Packaging/specification integrity only
+Independent human double coding,NOT_PERFORMED,Not performed and not required for the present operational-conformance claim; no surrogate labels generated.,No human inter-rater reliability claimed
+External expert content-validity review,NOT_PERFORMED,Not performed; no substitute claim made.,ARRP remains author-proposed and is not a consensus standard

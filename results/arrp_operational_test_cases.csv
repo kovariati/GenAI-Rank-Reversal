@@ -1,0 +1,13 @@
+case_id,scenario,A,D,O,G,N,expected_note
+T01,"AI writes part of the scored essay during the same session.",available,concurrent,same,none,unclear,"Joint human-AI performance; no independent-performance claim."
+T02,"One hour later, students repeat the same items on paper under proctoring with AI prohibited.",removed,"1 hour",repeated,none,prevented,"Independent repeated-item performance, not transfer."
+T03,"Immediately after AI-supported practice, students solve new isomorphic problems without AI in a monitored lab.",removed,immediate,similar,near,monitored,"Immediate near-transfer evidence."
+T04,"Two weeks later, participants complete a novel task in a new context with device restrictions and logs.",removed,"14 days",novel,"domain/context shift",verified,"Delayed transfer evidence under documented non-use."
+T05,"A paper reports a post-test but does not state whether AI was accessible.",unclear,unclear,unclear,unclear,unclear,"Do not infer AI removal from the word post-test."
+T06,"AI is disabled for text generation but grammar correction remains available during the scored response.",restricted,immediate,similar,near,verified,"Report the exact restriction scope; not fully AI-free."
+T07,"Participants use AI on Task 1 and perform a different creativity task without AI immediately afterward.",removed,immediate,novel,near,verified,"Regime changes along multiple dimensions; not an isolated AI-removal effect."
+T08,"A delayed test uses the identical questions from assisted practice.",removed,"7 days",repeated,none,prevented,"Delay supports persistence-related evidence but repetition limits transfer."
+T09,"A survey asks whether participants feel they could perform without AI; no scored task is administered.",unclear,unclear,unclear,unclear,self-report,"Not a scored independent-performance outcome."
+T10,"A coding assistant is available only for documentation lookup, not code generation, during a scored coding task.",restricted,concurrent,similar,none,verified,"Availability must be scoped by construct-relevant AI function."
+T11,"Participants complete an unassisted test one week later, but intervening AI use outside the study is not controlled.",removed,"7 days",novel,near,self-report,"Assessment-time non-use can be documented even when intervening exposure remains a separate limitation."
+T12,"The manuscript states 'independent exam' but provides no procedure describing tool access.",unclear,unclear,unclear,unclear,unclear,"Labels do not substitute for evidence of the assessment regime."

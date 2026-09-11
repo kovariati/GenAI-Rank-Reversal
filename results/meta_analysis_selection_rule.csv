@@ -1,0 +1,6 @@
+criterion_id,criterion,operational_rule
+1,Topic,"Quantitative synthesis of Generative AI or ChatGPT interventions in education"
+2,Outcome,"Includes learner performance, achievement, learning, or closely related educational outcomes"
+3,Publication status,"Peer-reviewed and publicly available by the frozen search/audit date (2026-08-17)"
+4,Auditability,"Published coding, moderator, or extraction documentation sufficient to inspect whether dedicated A/D/O/G/N fields are present"
+5,Selection independence,"Included in the frozen comparator set before observing the ARRP schema-audit result; not selected because of the eventual 0/35 finding"

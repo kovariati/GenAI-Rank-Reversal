@@ -1,0 +1,63 @@
+check,status,detail
+codebook_has_five_unique_dimensions,PASS,"5 rows; codes=['A', 'D', 'G', 'N', 'O']"
+codebook_A_has_unclear,PASS,available | removed | restricted | unclear
+codebook_A_has_evidence_rule,PASS,Explicit methods/procedure statement or directly described assessment environment.
+codebook_D_has_unclear,PASS,concurrent | immediate | exact elapsed time | unclear
+codebook_D_has_evidence_rule,PASS,"Timeline, procedure, or dated session description."
+codebook_O_has_unclear,PASS,same | repeated | similar | novel | unclear
+codebook_O_has_evidence_rule,PASS,Item/task descriptions or explicit statement of repeated/isomorphic/new material.
+codebook_G_has_unclear,PASS,none | near | far | domain/context shift | unclear
+codebook_G_has_evidence_rule,PASS,Task-domain relation and response requirements.
+codebook_N_has_unclear,PASS,prevented | monitored | verified | self-report | unclear
+codebook_N_has_evidence_rule,PASS,"Proctoring, device restriction, logging, monitoring, explicit self-report, or equivalent evidence."
+executable_E01,PASS,"expected={'A': 'available', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'unclear'}; got={'A': 'available', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'unclear'}"
+executable_E02,PASS,"expected={'A': 'removed', 'D': '1 hour', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}; got={'A': 'removed', 'D': '1 hour', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}"
+executable_E03,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}; got={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}"
+executable_E04,PASS,"expected={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}; got={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+executable_E05,PASS,"expected={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}; got={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}"
+executable_E06,PASS,"expected={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; got={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+executable_E07,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}; got={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}"
+executable_E08,PASS,"expected={'A': 'removed', 'D': '7 days', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}; got={'A': 'removed', 'D': '7 days', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}"
+executable_E09,PASS,"expected={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'self-report'}; got={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'self-report'}"
+executable_E10,PASS,"expected={'A': 'restricted', 'D': 'concurrent', 'O': 'similar', 'G': 'none', 'N': 'verified'}; got={'A': 'restricted', 'D': 'concurrent', 'O': 'similar', 'G': 'none', 'N': 'verified'}"
+executable_E11,PASS,"expected={'A': 'removed', 'D': '7 days', 'O': 'novel', 'G': 'near', 'N': 'self-report'}; got={'A': 'removed', 'D': '7 days', 'O': 'novel', 'G': 'near', 'N': 'self-report'}"
+executable_E12,PASS,"expected={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}; got={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}"
+executable_E13,PASS,"expected={'A': 'removed', 'D': '30 days', 'O': 'novel', 'G': 'far', 'N': 'verified'}; got={'A': 'removed', 'D': '30 days', 'O': 'novel', 'G': 'far', 'N': 'verified'}"
+executable_E14,PASS,"expected={'A': 'available', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'unclear'}; got={'A': 'available', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'unclear'}"
+executable_E15,PASS,"expected={'A': 'restricted', 'D': '2 days', 'O': 'repeated', 'G': 'none', 'N': 'monitored'}; got={'A': 'restricted', 'D': '2 days', 'O': 'repeated', 'G': 'none', 'N': 'monitored'}"
+executable_E16,PASS,"expected={'A': 'removed', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'prevented'}; got={'A': 'removed', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'prevented'}"
+executable_E17,PASS,"expected={'A': 'unclear', 'D': '3 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}; got={'A': 'unclear', 'D': '3 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+executable_E18,PASS,"expected={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}; got={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+executable_E19,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'unclear', 'N': 'monitored'}; got={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'unclear', 'N': 'monitored'}"
+executable_E20,PASS,"expected={'A': 'restricted', 'D': 'unclear', 'O': 'same', 'G': 'none', 'N': 'unclear'}; got={'A': 'restricted', 'D': 'unclear', 'O': 'same', 'G': 'none', 'N': 'unclear'}"
+executable_test_count,PASS,20/20 structured cases
+metamorphic_M01,PASS,"target=A; changed=['A']; base={'A': 'available', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+metamorphic_M02,PASS,"target=A; changed=['A']; base={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'unclear', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+metamorphic_M03,PASS,"target=D; changed=['D']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': '7 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+metamorphic_M04,PASS,"target=D; changed=['D']; base={'A': 'removed', 'D': '7 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'unclear', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+metamorphic_M05,PASS,"target=O; changed=['O']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'repeated', 'G': 'near', 'N': 'verified'}"
+metamorphic_M06,PASS,"target=O; changed=['O']; base={'A': 'removed', 'D': 'immediate', 'O': 'repeated', 'G': 'none', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'none', 'N': 'verified'}"
+metamorphic_M07,PASS,"target=G; changed=['G']; base={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'verified'}"
+metamorphic_M08,PASS,"target=G; changed=['G']; base={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+metamorphic_M09,PASS,"target=N; changed=['N']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
+metamorphic_M10,PASS,"target=N; changed=['N']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'unclear'}"
+metamorphic_test_count,PASS,10/10 single-dimension pairs
+legacy_case_count,PASS,12/12
+legacy_T05_ambiguity_guardrail,PASS,all five dimensions remain unclear
+legacy_T12_ambiguity_guardrail,PASS,all five dimensions remain unclear
+worked_example_count,PASS,77/77
+worked_outcome_ids_unique,PASS,77 unique IDs
+worked_doi_complete,PASS,77/77 nonblank
+worked_source_url_complete,PASS,77/77 nonblank
+worked_coding_source_complete,PASS,77/77 nonblank
+worked_coding_status_complete,PASS,77/77 nonblank
+worked_ai_availability_at_assessment_complete,PASS,77/77 nonblank
+worked_assessment_delay_complete,PASS,77/77 nonblank
+worked_task_item_overlap_complete,PASS,77/77 nonblank
+worked_transfer_demand_complete,PASS,77/77 nonblank
+worked_evidence_scope_ai_nonuse_complete,PASS,77/77 nonblank
+worked_defensible_score_interpretation_complete,PASS,77/77 nonblank
+worked_examples_no_human_reliability_claim,PASS,77/77 explicitly bounded
+core_reporting_field_count,PASS,5/5 proposed core fields
+dimension_rationale_has_five_codes,PASS,"5 rows; codes=['A', 'D', 'G', 'N', 'O']"
+validation_status_preserves_boundary,PASS,8 status rows with explicit external-validity boundaries

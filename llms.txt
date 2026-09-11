@@ -1,0 +1,46 @@
+# Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes
+
+Public code, results, and reproducibility repository for a manuscript on assessment-regime rank reversal in Generative AI evaluation.
+
+## Canonical scientific claims
+- AI-assisted performance alone does not establish independent human performance.
+- Rank preservation across assessment contexts cannot be inferred from randomization alone.
+- Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled.
+
+## Key concepts
+- generative AI
+- GenAI
+- LLM
+- human AI collaboration
+- AI assisted task performance
+- independent human performance
+- performance learning gap
+- learning outcomes
+- retention
+- transfer
+- assessment regime
+- outcome elicitation
+- intervention rank reversal
+- assessment-regime rank transport
+- causal transportability
+- treatment effect heterogeneity
+- qualitative interaction
+- crossover interaction
+- estimand heterogeneity
+- meta analysis
+- evidence synthesis
+- AI assessment validity
+- cognitive offloading
+- software engineering AI assistants
+- workplace AI productivity
+- clinical decision support AI
+- reproducibility
+
+## Reusable object
+- ARRP (Assessment-Regime Reporting Profile): docs/ARRP.md and arrp.schema.json
+
+## Citation
+The associated manuscript/article is the scientific citation target for the method and findings. Publication metadata are intentionally omitted until they exist. Direct software reuse should also cite the software release and follow the MIT License.
+
+## Links
+- Repository: https://github.com/kovariati/GenAI-Rank-Reversal

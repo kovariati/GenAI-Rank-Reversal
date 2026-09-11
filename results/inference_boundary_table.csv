@@ -1,0 +1,6 @@
+assessment_regime,supports,does_not_by_itself_support,key_condition
+AI available during scored response,Treatment effect on performance of the assigned human–AI system,Independent human performance; learning; retention; transfer,Requires a separate assessment regime for independent-performance claims.
+AI removed; immediate repeated-item test,Treatment effect on human performance on repeated items after assistance,Novel-task transfer; long-term retention,AI removal is necessary for some independent claims but repetition limits transfer interpretation.
+AI removed; immediate novel/related task,Treatment effect on independent human performance on that task,Long-term retention; far transfer unless design supports it,Interpret transfer distance explicitly.
+AI removed; delayed same/related construct assessment,Delayed independent human performance; retention-related evidence when measurement supports it,Far transfer without changed task/context evidence,Exact delay and measurement comparability matter.
+AI removed; delayed novel task/context,Independent delayed transfer performance under specified conditions,General capability beyond the sampled tasks,"Still bounded by sampling, reliability, scoring, and causal design."

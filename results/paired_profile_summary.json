@@ -1,0 +1,10 @@
+{
+  "paired_profiles": 6,
+  "independent_research_programs": 3,
+  "supported_min": 0.1729884389200618,
+  "supported_max": 1.2540467812439295,
+  "independent_min": -0.196081963300226,
+  "independent_max": 0.5503095995467958,
+  "cross_study_pooling": false,
+  "interpretation": "Outcome-specific control-SD profiles. Different assessment regimes target outcome-specific treatment effects; profile differences are not causal effects of removing AI unless the assessment regime is experimentally isolated."
+}

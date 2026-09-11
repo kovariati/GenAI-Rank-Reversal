@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets / local configuration
+.env
+.env.*
+*.key
+*.pem
+credentials*
+
+# Third-party or restricted raw data
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated local scratch
+_tmp/
+tmp/
+*.log

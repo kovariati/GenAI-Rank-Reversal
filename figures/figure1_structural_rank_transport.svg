@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1880 940" width="1880" height="940" role="img" aria-label="Rank-transport framework infographic with large readable text">
+  <defs>
+    <marker id="arrowNeutral" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L13 7 L1 13 Z" fill="#526070"/>
+    </marker>
+    <marker id="arrowMeta" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L13 7 L1 13 Z" fill="#7B8794"/>
+    </marker>
+  </defs>
+  <path d="M380 320 H410" fill="none" stroke="#526070" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+  <path d="M740 320 H770" fill="none" stroke="#526070" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+  <path d="M1400 320 H1430" fill="none" stroke="#526070" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+  <g>
+    <rect x="60" y="190" width="320" height="260" rx="26" fill="#F4F2FF" stroke="#C8C5F4" stroke-width="2"/>
+    <circle cx="115" cy="245" r="31" fill="#5B5BD6"/>
+    <circle cx="115" cy="245" r="17" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
+    <circle cx="115" cy="245" r="8.5" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
+    <circle cx="115" cy="245" r="3" fill="#FFFFFF"/>
+    <path d="M126 234 L139 221 M139 221 L138 230 M139 221 L130 222" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="292" y="218" width="55" height="38" rx="19" fill="#E4E1FF"/>
+    <text x="319.5" y="244" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#4A49B7" style="white-space: pre;">C</text>
+    <text x="100" y="324" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="750" fill="#27313D" style="white-space: pre;">Target construct</text>
+    <text x="100" y="360" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="500" fill="#677483" style="white-space: pre;">What is measured?</text>
+    <path d="M100 392 H338" stroke="#D7D4F5" stroke-width="2" stroke-linecap="round"/>
+    <text x="100" y="424" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#5B5BD6" style="white-space: pre;">construct meaning</text>
+  </g>
+  <g>
+    <rect x="420" y="190" width="320" height="260" rx="26" fill="#EEF7FF" stroke="#B9D8F7" stroke-width="2"/>
+    <circle cx="475" cy="245" r="31" fill="#2376D8"/>
+    <path d="M464 228 H483 L491 236 V263 H464 Z" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M483 228 V237 H491" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M469 245 H485 M469 252 H485 M469 259 H480" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="652" y="218" width="55" height="38" rx="19" fill="#DDEEFF"/>
+    <text x="679.5" y="244" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#1C65BB" style="white-space: pre;">Q</text>
+    <text x="460" y="324" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="750" fill="#27313D" style="white-space: pre;">Task / form / content</text>
+    <text x="460" y="360" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="500" fill="#677483" style="white-space: pre;">How is it elicited?</text>
+    <path d="M460 392 H698" stroke="#C7DFF7" stroke-width="2" stroke-linecap="round"/>
+    <text x="460" y="424" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#2376D8" style="white-space: pre;">task identity &amp; form</text>
+  </g>
+  <g>
+    <rect x="780" y="165" width="620" height="310" rx="28" fill="#FFF8ED" stroke="#F2D39D" stroke-width="2"/>
+    <circle cx="835" cy="220" r="31" fill="#F2A43A"/>
+    <path d="M819 208 H851 M819 220 H851 M819 232 H851" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="828" cy="208" r="4.5" fill="#FFFFFF"/>
+    <circle cx="843" cy="220" r="4.5" fill="#FFFFFF"/>
+    <circle cx="831" cy="232" r="4.5" fill="#FFFFFF"/>
+    <rect x="1306" y="194" width="61" height="38" rx="19" fill="#FFE9C7"/>
+    <text x="1336.5" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#B96E12" style="white-space: pre;">E</text>
+    <text x="885" y="215" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="750" fill="#27313D" style="white-space: pre;">Outcome-elicitation conditions</text>
+    <text x="885" y="246" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="650" fill="#A66316" style="white-space: pre;">E = (A, D, O, G)</text>
+    <g>
+      <rect x="812" y="275" width="270" height="78" rx="18" fill="#FFFFFF" stroke="#F1D9B3" stroke-width="1.8"/>
+      <circle cx="850" cy="314" r="21" fill="#FFF0D7"/>
+      <circle cx="844" cy="310" r="3.4" fill="#D8861E"/>
+      <circle cx="858" cy="308" r="3.4" fill="#D8861E"/>
+      <circle cx="855" cy="322" r="3.4" fill="#D8861E"/>
+      <path d="M846 311 L856 309 M846 312 L853 320 M857 311 L855 319" stroke="#D8861E" stroke-width="1.9" stroke-linecap="round"/>
+      <text x="884" y="307" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">A · AI availability</text>
+      <text x="884" y="333" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">full · restricted · none</text>
+    </g>
+    <g>
+      <rect x="1096" y="275" width="270" height="78" rx="18" fill="#FFFFFF" stroke="#F1D9B3" stroke-width="1.8"/>
+      <circle cx="1134" cy="314" r="21" fill="#FFF0D7"/>
+      <circle cx="1134" cy="314" r="12" fill="none" stroke="#D8861E" stroke-width="2.2"/>
+      <path d="M1134 306 V314 L1141 319" fill="none" stroke="#D8861E" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="1168" y="307" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">D · Delay</text>
+      <text x="1168" y="333" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">since assisted exposure</text>
+    </g>
+    <g>
+      <rect x="812" y="369" width="270" height="78" rx="18" fill="#FFFFFF" stroke="#F1D9B3" stroke-width="1.8"/>
+      <circle cx="850" cy="408" r="21" fill="#FFF0D7"/>
+      <circle cx="844" cy="408" r="9" fill="none" stroke="#D8861E" stroke-width="2.2"/>
+      <circle cx="856" cy="408" r="9" fill="none" stroke="#D8861E" stroke-width="2.2"/>
+      <text x="884" y="401" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">O · Overlap</text>
+      <text x="884" y="427" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">supported ↔ assessed</text>
+    </g>
+    <g>
+      <rect x="1096" y="369" width="270" height="78" rx="18" fill="#FFFFFF" stroke="#F1D9B3" stroke-width="1.8"/>
+      <circle cx="1134" cy="408" r="21" fill="#FFF0D7"/>
+      <path d="M1125 416 L1143 398 M1134 398 H1143 V407" fill="none" stroke="#D8861E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1125 402 H1131 M1125 409 H1131 M1125 416 H1131" stroke="#D8861E" stroke-width="2" stroke-linecap="round"/>
+      <text x="1168" y="401" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">G · Generalization</text>
+      <text x="1168" y="427" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">transfer demand</text>
+    </g>
+  </g>
+  <g>
+    <rect x="1440" y="190" width="380" height="260" rx="26" fill="#EEFBF7" stroke="#B6E4D7" stroke-width="2"/>
+    <circle cx="1495" cy="245" r="31" fill="#17A589"/>
+    <path d="M1483 258 V238 M1495 258 V229 M1507 258 V243" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M1480 261 H1511" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="1480" y="324" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="750" fill="#27313D" style="white-space: pre;">Scored outcome</text>
+    <rect x="1480" y="348" width="300" height="55" rx="14" fill="#DDF5ED"/>
+    <text x="1630" y="384" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-style="italic" fill="#0D7A64" style="white-space: pre;">Y(j; C, Q, E)</text>
+    <text x="1480" y="430" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#17A589" style="white-space: pre;">context-specific score</text>
+  </g>
+  <rect x="720" y="505" width="440" height="50" rx="25" fill="#FFFFFF" stroke="#DDE3E9" stroke-width="1.6"/>
+  <text x="940" y="537" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="650" fill="#677483" style="white-space: pre;">C + Q + E define the elicited outcome</text>
+  <g>
+    <rect x="180" y="610" width="1520" height="245" rx="30" fill="#F8FAFC" stroke="#9AA6B2" stroke-width="2.2" stroke-dasharray="11 9"/>
+    <circle cx="245" cy="675" r="34" fill="#697786"/>
+    <path d="M245 654 L262 661 V673 C262 686 255 696 245 701 C235 696 228 686 228 673 V661 Z" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M237 676 L243 682 L254 670" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1600" y="640" width="62" height="40" rx="20" fill="#E8EDF2"/>
+    <text x="1631" y="668" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#5B6672" style="white-space: pre;">V</text>
+    <text x="300" y="670" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="750" fill="#27313D" style="white-space: pre;">Reporting / verification metadata</text>
+    <text x="300" y="703" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="500" fill="#677483" style="white-space: pre;">Evidence supporting interpretation of the assessment conditions</text>
+    <g>
+      <rect x="300" y="738" width="420" height="78" rx="18" fill="#FFFFFF" stroke="#D9E0E7" stroke-width="1.7"/>
+      <circle cx="340" cy="777" r="21" fill="#EDF1F5"/>
+      <path d="M331 765 H345 L351 771 V790 H331 Z" fill="none" stroke="#65717D" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M345 765 V772 H351 M335 779 H346 M335 786 H343" fill="none" stroke="#65717D" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="378" y="770" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">Evidence</text>
+      <text x="378" y="797" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">how conditions were documented</text>
+    </g>
+    <g>
+      <rect x="742" y="738" width="500" height="78" rx="18" fill="#FFFFFF" stroke="#D9E0E7" stroke-width="1.7"/>
+      <circle cx="782" cy="777" r="21" fill="#EDF1F5"/>
+      <path d="M782 764 L793 769 V777 C793 785 788 792 782 796 C776 792 771 785 771 777 V769 Z" fill="none" stroke="#65717D" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M777 778 L781 782 L788 773" fill="none" stroke="#65717D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="822" y="770" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#27313D" style="white-space: pre;">N · AI non-use evidence</text>
+      <text x="822" y="797" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#677483" style="white-space: pre;">evidence + verification scope</text>
+    </g>
+    <rect x="1264" y="738" width="390" height="78" rx="18" fill="#EFF3F6"/>
+    <text x="1459" y="770" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750" fill="#5E6A76" style="white-space: pre;">interpretation layer</text>
+    <text x="1459" y="797" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#7B8794" style="white-space: pre;">not an argument of Y</text>
+  </g>
+  <path d="M1680 610 C1775 565 1800 510 1760 465" fill="none" stroke="#7B8794" stroke-width="2.8" stroke-dasharray="9 8" stroke-linecap="round" marker-end="url(#arrowMeta)"/>
+  <rect x="1450" y="530" width="360" height="48" rx="24" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1.6"/>
+  <text x="1630" y="561" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#697786" style="white-space: pre;">supports interpretation · does not index Y</text>
+</svg>

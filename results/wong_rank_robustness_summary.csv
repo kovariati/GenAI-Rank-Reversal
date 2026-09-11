@@ -1,0 +1,7 @@
+outcome,D_A,D_I,rectangle,w_L,w_U,lambda_L,lambda_U,w_star_lambda_L,w_star_lambda_U,classification,note
+originality,0.782090,-0.736510,broad_reference,0.000,1.000,0.500,2.000,0.653192139,0.320125755,assumption_sensitive_or_tie_possible,Sensitivity classification; not a recommended synthesis estimand
+originality,0.782090,-0.736510,assisted_dominant_example,0.800,1.000,0.500,2.000,0.653192139,0.320125755,positive_for_all_allowed_weight_scale_pairs,Sensitivity classification; not a recommended synthesis estimand
+originality,0.782090,-0.736510,independent_dominant_example,0.000,0.200,0.500,2.000,0.653192139,0.320125755,negative_for_all_allowed_weight_scale_pairs,Sensitivity classification; not a recommended synthesis estimand
+usefulness,0.660276,-0.578645,broad_reference,0.000,1.000,0.500,2.000,0.636725412,0.304678999,assumption_sensitive_or_tie_possible,Sensitivity classification; not a recommended synthesis estimand
+usefulness,0.660276,-0.578645,assisted_dominant_example,0.800,1.000,0.500,2.000,0.636725412,0.304678999,positive_for_all_allowed_weight_scale_pairs,Sensitivity classification; not a recommended synthesis estimand
+usefulness,0.660276,-0.578645,independent_dominant_example,0.000,0.200,0.500,2.000,0.636725412,0.304678999,negative_for_all_allowed_weight_scale_pairs,Sensitivity classification; not a recommended synthesis estimand

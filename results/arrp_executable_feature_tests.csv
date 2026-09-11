@@ -1,0 +1,21 @@
+case_id,ai_access_feature,timing_feature,timing_value,overlap_feature,transfer_feature,nonuse_feature,expected_A,expected_D,expected_O,expected_G,expected_N,expected_note
+E01,accessible,concurrent,,same,none,unknown,available,concurrent,same,none,unclear,Joint human-AI scored response.
+E02,unavailable,elapsed,1 hour,repeated,none,prevented,removed,1 hour,repeated,none,prevented,Independent repeated-item assessment.
+E03,unavailable,immediate,,similar,near,monitored,removed,immediate,similar,near,monitored,Immediate near transfer under monitored non-use.
+E04,unavailable,elapsed,14 days,novel,domain_shift,verified,removed,14 days,novel,domain/context shift,verified,Delayed cross-context transfer with verified non-use.
+E05,unknown,unknown,,unknown,unknown,unknown,unclear,unclear,unclear,unclear,unclear,No regime is imputed from an underspecified post-test label.
+E06,partial,immediate,,similar,near,verified,restricted,immediate,similar,near,verified,Construct-relevant AI is restricted rather than absent.
+E07,unavailable,immediate,,novel,near,verified,removed,immediate,novel,near,verified,Immediate novel-task near transfer.
+E08,unavailable,elapsed,7 days,repeated,none,prevented,removed,7 days,repeated,none,prevented,Delayed repeated-item assessment.
+E09,unknown,unknown,,unknown,unknown,self_report,unclear,unclear,unclear,unclear,self-report,Self-report alone does not identify other regime fields.
+E10,partial,concurrent,,similar,none,verified,restricted,concurrent,similar,none,verified,Partial tool access remains restricted access.
+E11,unavailable,elapsed,7 days,novel,near,self_report,removed,7 days,novel,near,self-report,Assessment-time non-use and intervening exposure are distinct.
+E12,unknown,unknown,,unknown,unknown,unknown,unclear,unclear,unclear,unclear,unclear,Independent label without procedures remains unclear.
+E13,unavailable,elapsed,30 days,novel,far,verified,removed,30 days,novel,far,verified,Far transfer within the same broad domain.
+E14,accessible,immediate,,novel,far,unknown,available,immediate,novel,far,unclear,AI-assisted far-transfer task; non-use evidence not applicable/unknown.
+E15,partial,elapsed,2 days,repeated,none,monitored,restricted,2 days,repeated,none,monitored,Restricted delayed repeated-item assessment.
+E16,unavailable,concurrent,,same,none,prevented,removed,concurrent,same,none,prevented,Unaided concurrent scoring of the same task.
+E17,unknown,elapsed,3 days,similar,near,verified,unclear,3 days,similar,near,verified,Unknown access can coexist with known timing/task evidence.
+E18,unavailable,unknown,,novel,domain_shift,verified,removed,unclear,novel,domain/context shift,verified,Timing can remain unclear while other fields are identified.
+E19,unavailable,immediate,,unknown,unknown,monitored,removed,immediate,unclear,unclear,monitored,Task correspondence is not inferred from AI removal.
+E20,partial,unknown,,same,none,unknown,restricted,unclear,same,none,unclear,Restriction scope can be known while timing/evidence remain unclear.

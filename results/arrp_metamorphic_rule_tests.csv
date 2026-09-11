@@ -1,0 +1,11 @@
+pair_id,target_dimension,base_ai,base_timing,base_timing_value,base_overlap,base_transfer,base_nonuse,variant_ai,variant_timing,variant_timing_value,variant_overlap,variant_transfer,variant_nonuse,expected_property
+M01,A,accessible,immediate,,similar,near,verified,partial,immediate,,similar,near,verified,Only A changes: available -> restricted.
+M02,A,partial,immediate,,similar,near,verified,unknown,immediate,,similar,near,verified,Only A changes: restricted -> unclear.
+M03,D,unavailable,immediate,,similar,near,verified,unavailable,elapsed,7 days,similar,near,verified,Only D changes: immediate -> 7 days.
+M04,D,unavailable,elapsed,7 days,similar,near,verified,unavailable,unknown,,similar,near,verified,Only D changes: 7 days -> unclear.
+M05,O,unavailable,immediate,,similar,near,verified,unavailable,immediate,,repeated,near,verified,Only O changes: similar -> repeated.
+M06,O,unavailable,immediate,,repeated,none,verified,unavailable,immediate,,unknown,none,verified,Only O changes: repeated -> unclear.
+M07,G,unavailable,immediate,,novel,near,verified,unavailable,immediate,,novel,far,verified,Only G changes: near -> far.
+M08,G,unavailable,immediate,,novel,far,verified,unavailable,immediate,,novel,domain_shift,verified,Only G changes: far -> domain/context shift.
+M09,N,unavailable,immediate,,similar,near,monitored,unavailable,immediate,,similar,near,verified,Only N changes: monitored -> verified.
+M10,N,unavailable,immediate,,similar,near,verified,unavailable,immediate,,similar,near,unknown,Only N changes: verified -> unclear.

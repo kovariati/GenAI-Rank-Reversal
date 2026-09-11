@@ -1,0 +1,13 @@
+Canonical analysis runtime recorded for the submission-frozen result set:
+Python 3.13.5
+Linux x86_64
+NumPy 2.3.5
+pandas 2.2.3
+SciPy 1.17.0
+statsmodels 0.14.6
+Random seed (core public-data analysis): 20260816
+Random seed (Wong participant analysis): 20260817
+
+The public packaging/validation pass was also checked with the exact `requirements-lock.txt` versions available in the build environment.
+
+The public requirements-lock.txt contains 23 direct+transitive runtime pins and is checked by tools/validate_dependency_lock.py.
