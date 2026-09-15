@@ -6,7 +6,6 @@ import csv
 import json
 import re
 import shutil
-import struct
 import subprocess
 import sys
 import tempfile
@@ -136,13 +135,8 @@ topics = [x.strip() for x in (ROOT / 'GITHUB_TOPICS.txt').read_text(encoding='ut
 assert topics == M['github_topics']
 assert 12 <= len(topics) <= 20 and len(topics) == len(set(topics)), topics
 assert all(re.fullmatch(r'[a-z0-9-]+', x) for x in topics), topics
-png = (ROOT / '.github/assets/social-preview.png').read_bytes()
-assert png[:8] == b'\x89PNG\r\n\x1a\n'
-w, h = struct.unpack('>II', png[16:24])
-assert (w, h) == (1280, 640), (w, h)
-assert 'figures/graphical_abstract.png' in readme
 assert 'docs/ARRP.md' in readme and 'arrp.schema.json' in readme
-print(f'github_discovery_surfaces: PASS (About={len(about)} chars; topics={len(topics)}; preview=1280x640)')
+print(f'github_discovery_surfaces: PASS (About={len(about)} chars; topics={len(topics)})')
 
 # Release-asset policy: the tagged repository is the canonical source snapshot.
 release_notes = (ROOT / 'RELEASE_NOTES_v1.0.0.md').read_text(encoding='utf-8')

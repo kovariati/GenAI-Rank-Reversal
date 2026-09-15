@@ -76,25 +76,11 @@ def build(manuscript_dir=None):
     fig.subplots_adjust(bottom=.17,left=.12,top=.87,right=.97)
     save(fig,out / 'rank_robustness_region')
 
-    fig=plt.figure(figsize=(12.8,6.4));ax=fig.add_axes([0,0,1,1]);ax.set_axis_off()
-    ax.text(.065,.85,'Generative AI and Task-Specific\nIntervention Ordering',fontsize=29,
-            fontweight='bold',va='top',linespacing=1.25)
-    ax.text(.065,.59,'A methodological framework and secondary analysis',fontsize=18,va='top')
-    ax.text(.065,.45,'Declare the task and score → audit comparison scope\n→ estimate direct contrasts → apply uncertainty and multiplicity',
-            fontsize=18,va='top',linespacing=1.6)
-    ax.text(.065,.22,'Wong–Qiu: bounded product-originality ratings in two tasks.\nNot general creativity, durable learning, or an isolated AI-removal effect.',
-            fontsize=15,va='top',linespacing=1.5)
-    ax.text(.065,.055,'C · construct     Q · task     E · elicitation     V · verification evidence',fontsize=13)
-    fig.savefig(out/'graphical_abstract.png',dpi=100)
-    fig.savefig(out/'graphical_abstract.pdf',metadata={'CreationDate':None,'ModDate':None})
-    plt.close(fig)
-    social=ROOT/'.github/assets/social-preview.png';social.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(out/'graphical_abstract.png',social)
     if manuscript_dir:
         md=Path(manuscript_dir)/'figures';md.mkdir(exist_ok=True)
         shutil.copyfile(out/'wong_rank_reversal.png',md/'figure3_wong_task_specific_contrasts.png')
         shutil.copyfile(out/'rank_robustness_region.png',md/'figure4_rank_robustness.png')
-    return [out/'wong_rank_reversal.png',out/'rank_robustness_region.png',out/'graphical_abstract.png']
+    return [out/'wong_rank_reversal.png', out/'rank_robustness_region.png']
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--manuscript-dir')

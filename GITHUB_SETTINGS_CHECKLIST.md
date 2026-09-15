@@ -18,7 +18,6 @@ The GitHub topics intentionally favor high precision. Broader cross-domain terms
 
 ## Social preview
 
-Upload `.github/assets/social-preview.png` in GitHub → Settings → General → Social preview. The asset is 1280×640 and contains no invented DOI/journal metadata.
 
 ## CI / trust signal
 

@@ -29,11 +29,11 @@ Reframed as methodological framework and retrospective secondary analysis, restr
 - Diagnostic synthesis-schema audit and evidence-map provenance.
 - Detailed audit and reproducibility ledgers indexed in `docs/REPRODUCIBILITY_ARTIFACTS.md`; software-QC records are kept in the repository rather than expanded in the journal appendix.
 - Canonical manuscript visualization set: C/Q/E/V construct-gate diagram and native-scale Wong–Qiu reversal figure; the cross-study effect-profile figure is not shipped as a canonical manuscript figure because it may imply unsupported common-scale comparability.
-- Figure 1 synchronized to the final author-supplied SVG with byte-matched PDF/PNG exports; graphical abstract wording narrowed to assisted product improvement versus unassisted product invention.
+- Figure 1 synchronized to the final author-supplied SVG with byte-matched PDF/PNG exports; figure wording aligned with the bounded task-specific interpretation.
 - ARRP manuscript-facing allowed values synchronized exactly with `arrp.schema.json`.
 - Wong–Qiu sample documentation synchronized to 197 randomized / 196 analyzed after one source-author exclusion, with no additional reanalysis exclusions.
 - Data-availability language now states the third-party raw-source boundary explicitly for fresh end-to-end reruns.
-- Canonical metadata source, CFF/BibTeX/RIS/CodeMeta/JSON-LD exports, social-preview asset and fail-closed public-release validation.
+- Canonical metadata source, CFF/BibTeX/RIS/CodeMeta/JSON-LD exports and fail-closed public-release validation.
 - No third-party raw participant data redistributed.
 - Release packaging simplified: the `v1.0.0` Git tag is the canonical source/reproducibility snapshot; no duplicate full-repository or subset-only provenance archive is published.
 - One custom `results-and-artifacts.zip` convenience bundle is used for release downloads.
