@@ -76,7 +76,7 @@ def build(results: Path, bassner_raw: Path|None=None, reps: int=3999):
             point_source='participant-level harmonized analysis',ci_source='study-specific model interval',source_doi='10.1016/j.caeai.2025.100537'))
         ci=bassner_ci.get(grp,(np.nan,np.nan,0)); contrasts.append(dict(study='Bassner et al. (2026)',design=label,independent_minus_supported_std=indep-supp,ci_low=ci[0],ci_high=ci[1],inference=f'participant-stratified bootstrap profile contrast; {ci[2]} valid replicates' if ci[2] else 'bootstrap requires public Bassner raw file'))
 
-    # Wong & Qiu: participant-level public OSF reanalysis, originality is the prespecified main paired outcome.
+    # Wong & Qiu: participant-level public OSF reanalysis, originality is the retrospectively selected focal reporting outcome; no preregistration is asserted.
     wr=pd.read_csv(results/'wong_participant_reanalysis.csv'); wr=wr[wr.outcome=='Originality']
     for design in ['Unrestricted ChatGPT','Think-first, ChatGPT-later']:
         r=wr[wr.design==design].iloc[0]

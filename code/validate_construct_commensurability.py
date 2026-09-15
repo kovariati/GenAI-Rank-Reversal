@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 p=Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'results'/'construct_commensurability_audit.csv'
 required=['program','assisted_outcome','independent_outcome','shared_construct_link','common_directionality','task_identity_changed','transfer_demand_changed','commensurability_status','rank_comparison_eligible','interpretive_boundary','source_basis']
-allowed={'directionally_commensurable_with_boundary','construct_linked_directional_only','non_commensurable','unclear'}
+allowed={'directionally_commensurable_with_boundary','construct_linked_directional_only','task_specific_directional_only','non_commensurable','unclear'}
 rows=list(csv.DictReader(p.open(encoding='utf-8-sig')))
 checks=[]
 checks.append(('three_programs', len(rows)==3))

@@ -1,3 +1,5 @@
+> **Revision scope (2026-09-14).** Current focal inference is task-specific originality with orientation-plus-Holm p=0.01351; usefulness is secondary. No fresh raw-source participant rerun is claimed. Complete Bassner/Cicek/Zhou raw-to-result pipelines are not supplied. Prior raw-analysis descriptions below document archived provenance, not newly executed validation. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
+
 # Source provenance and redistribution boundaries
 
 The detailed source-provenance tables are repository artifacts rather than journal appendices.

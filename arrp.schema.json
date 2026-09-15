@@ -15,7 +15,8 @@
   "properties": {
     "outcome_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "source": {
       "type": "object",
@@ -60,7 +61,8 @@
         },
         "source_evidence": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         }
       }
     },
@@ -103,7 +105,8 @@
         },
         "source_evidence": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         }
       },
       "allOf": [
@@ -149,7 +152,8 @@
         },
         "source_evidence": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         }
       }
     },
@@ -178,7 +182,8 @@
         },
         "source_evidence": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         }
       }
     },
@@ -202,7 +207,8 @@
         },
         "scope": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         },
         "detail": {
           "type": [
@@ -212,7 +218,8 @@
         },
         "source_evidence": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "\\S"
         }
       }
     },

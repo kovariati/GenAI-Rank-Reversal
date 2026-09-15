@@ -1,3 +1,18 @@
+# Repository packaging update — 2026-09-15
+
+Release generation now produces only the results-and-artifacts ZIP. Separate file-identity inventories and auxiliary verification artifacts have been removed. Source provenance retains citations, source locations, filenames where available, sample information and random seeds. The validator compares regenerated results and metadata directly using their actual contents; scientific tests, numerical outputs and figures are retained unchanged. This is a local pre-release packaging update, not a newly published software release.
+
+# Local revision — 2026-09-14
+
+## Final manuscript alignment — 2026-09-14
+
+The final title, 195-word abstract and ten keywords clarify the methodological contribution and retain the restricted Wong–Qiu outcome scope in response to the reviewer. The no-AI wording refers to the assessment protocol rather than independently verified device-wide non-use. Citation metadata, article metadata and the README have been synchronized. Numerical programs, statistical results and figures are unchanged from the corrected revision. Publication identifiers remain unassigned and no live software release is asserted.
+
+
+Reframed as methodological framework and retrospective secondary analysis, restricted to task-specific originality. Added two-orientation multiplicity handling (Holm p 0.01351), simultaneous four-contrast intervals and the elaboration sensitivity family. Enforced the actual eligibility gate; corrected the signed shift condition, mean-transformation caveat, tie handling, dynamic evidence status, invalid grid/statistics handling and complete JSON-Schema checks. Corrected permutation terminology/null scope without claiming a raw rerun. Expanded 16 original tests to 56 cases. Added explicit raw-data/pipeline limits, revised figures and synchronized metadata. This is a local pre-release revision, not a new published release.
+
+---
+
 # Changelog
 
 ## 1.0.0 (planned publication-linked release)
@@ -21,4 +36,4 @@
 - Canonical metadata source, CFF/BibTeX/RIS/CodeMeta/JSON-LD exports, social-preview asset and fail-closed public-release validation.
 - No third-party raw participant data redistributed.
 - Release packaging simplified: the `v1.0.0` Git tag is the canonical source/reproducibility snapshot; no duplicate full-repository or subset-only provenance archive is published.
-- One custom `results-and-artifacts.zip` convenience bundle plus SHA-256 checksum is used for release downloads.
+- One custom `results-and-artifacts.zip` convenience bundle is used for release downloads.

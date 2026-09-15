@@ -43,7 +43,7 @@ Obtain `Supplemental Data.xlsx` from the public Wong & Qiu OSF source listed in 
 python code/analyze_wong_participant.py --raw-xlsx data/raw/Supplemental\ Data.xlsx --results results
 ```
 
-The canonical conditional randomization run uses 99,999 permutations.
+The supplied algorithm requests 99,999 arm-size-preserving permutations. Its sharp-null and constant-standardization assumptions are documented in `docs/STATISTICAL_SCOPE.md`; the archived run was not freshly rerun in this revision.
 
 ## Public-study regeneration
 
@@ -63,3 +63,15 @@ python tools/validate_arrp_schema.py
 ```
 
 The dependency-lock validator requires the exact versions in `requirements-lock.txt` to be installed and verifies that every runtime transitive dependency is pinned.
+
+## Three-dimension sensitivity and current scope
+
+```bash
+python code/analyze_wong_direct_reversal.py --outcomes originality usefulness elaboration --output results/wong_three_dimension_inference.csv --summary results/wong_three_dimension_summary.csv
+```
+
+The existing two-outcome family is retained for the focal report. Complete Bassner/Cicek/Zhou raw pipelines are not supplied; raw-source reproduction cannot be obtained merely by running the general public-study script.
+
+## Revised manuscript-facing figures
+
+After the summary-statistic outputs exist, run `python tools/build_revision_figures.py`. It regenerates the two task-specific originality contrasts, the fixed-point weight/scale illustration, and the bounded graphical abstract/social preview. An optional `--manuscript-dir PATH` copies the two analytical PNGs into the LaTeX project. No participant input is required.

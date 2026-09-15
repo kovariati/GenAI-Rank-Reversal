@@ -6,14 +6,14 @@ codebook_D_has_unclear,PASS,concurrent | immediate | exact elapsed time | unclea
 codebook_D_has_evidence_rule,PASS,"Timeline, procedure, or dated session description."
 codebook_O_has_unclear,PASS,same | repeated | similar | novel | unclear
 codebook_O_has_evidence_rule,PASS,Item/task descriptions or explicit statement of repeated/isomorphic/new material.
-codebook_G_has_unclear,PASS,none | near | far | domain/context shift | unclear
+codebook_G_has_unclear,PASS,none | near | far | domain-context-shift | unclear
 codebook_G_has_evidence_rule,PASS,Task-domain relation and response requirements.
 codebook_N_has_unclear,PASS,prevented | monitored | verified | self-report | unclear
 codebook_N_has_evidence_rule,PASS,"Proctoring, device restriction, logging, monitoring, explicit self-report, or equivalent evidence."
 executable_E01,PASS,"expected={'A': 'available', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'unclear'}; got={'A': 'available', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'unclear'}"
 executable_E02,PASS,"expected={'A': 'removed', 'D': '1 hour', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}; got={'A': 'removed', 'D': '1 hour', 'O': 'repeated', 'G': 'none', 'N': 'prevented'}"
 executable_E03,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}; got={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}"
-executable_E04,PASS,"expected={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}; got={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+executable_E04,PASS,"expected={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain-context-shift', 'N': 'verified'}; got={'A': 'removed', 'D': '14 days', 'O': 'novel', 'G': 'domain-context-shift', 'N': 'verified'}"
 executable_E05,PASS,"expected={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}; got={'A': 'unclear', 'D': 'unclear', 'O': 'unclear', 'G': 'unclear', 'N': 'unclear'}"
 executable_E06,PASS,"expected={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; got={'A': 'restricted', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
 executable_E07,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}; got={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}"
@@ -27,7 +27,7 @@ executable_E14,PASS,"expected={'A': 'available', 'D': 'immediate', 'O': 'novel',
 executable_E15,PASS,"expected={'A': 'restricted', 'D': '2 days', 'O': 'repeated', 'G': 'none', 'N': 'monitored'}; got={'A': 'restricted', 'D': '2 days', 'O': 'repeated', 'G': 'none', 'N': 'monitored'}"
 executable_E16,PASS,"expected={'A': 'removed', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'prevented'}; got={'A': 'removed', 'D': 'concurrent', 'O': 'same', 'G': 'none', 'N': 'prevented'}"
 executable_E17,PASS,"expected={'A': 'unclear', 'D': '3 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}; got={'A': 'unclear', 'D': '3 days', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
-executable_E18,PASS,"expected={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}; got={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+executable_E18,PASS,"expected={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain-context-shift', 'N': 'verified'}; got={'A': 'removed', 'D': 'unclear', 'O': 'novel', 'G': 'domain-context-shift', 'N': 'verified'}"
 executable_E19,PASS,"expected={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'unclear', 'N': 'monitored'}; got={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'unclear', 'N': 'monitored'}"
 executable_E20,PASS,"expected={'A': 'restricted', 'D': 'unclear', 'O': 'same', 'G': 'none', 'N': 'unclear'}; got={'A': 'restricted', 'D': 'unclear', 'O': 'same', 'G': 'none', 'N': 'unclear'}"
 executable_test_count,PASS,20/20 structured cases
@@ -38,7 +38,7 @@ metamorphic_M04,PASS,"target=D; changed=['D']; base={'A': 'removed', 'D': '7 day
 metamorphic_M05,PASS,"target=O; changed=['O']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'repeated', 'G': 'near', 'N': 'verified'}"
 metamorphic_M06,PASS,"target=O; changed=['O']; base={'A': 'removed', 'D': 'immediate', 'O': 'repeated', 'G': 'none', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'unclear', 'G': 'none', 'N': 'verified'}"
 metamorphic_M07,PASS,"target=G; changed=['G']; base={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'verified'}"
-metamorphic_M08,PASS,"target=G; changed=['G']; base={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'domain/context shift', 'N': 'verified'}"
+metamorphic_M08,PASS,"target=G; changed=['G']; base={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'far', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'novel', 'G': 'domain-context-shift', 'N': 'verified'}"
 metamorphic_M09,PASS,"target=N; changed=['N']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'monitored'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}"
 metamorphic_M10,PASS,"target=N; changed=['N']; base={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'verified'}; variant={'A': 'removed', 'D': 'immediate', 'O': 'similar', 'G': 'near', 'N': 'unclear'}"
 metamorphic_test_count,PASS,10/10 single-dimension pairs

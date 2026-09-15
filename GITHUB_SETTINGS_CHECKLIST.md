@@ -30,7 +30,7 @@ After the first `repository-quality` workflow has passed on the live repository,
 - Enable secret scanning / push protection where available.
 - Enable dependency security alerts where available.
 - Keep Actions enabled for `.github/workflows/repository-quality.yml`.
-- After the article has a definitive bibliographic record, create the `v1.0.0` release; upload only `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip` and its `.sha256` companion. The `v1.0.0` Git tag is the canonical source/reproducibility snapshot; do not upload duplicate full-repository or provenance ZIPs that merely repeat files already versioned in Git.
+- After the article has a definitive bibliographic record, create the `v1.0.0` release; upload only `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`. The `v1.0.0` Git tag is the canonical source/reproducibility snapshot; do not upload duplicate full-repository or provenance ZIPs that merely repeat files already versioned in Git.
 - If immutable releases are available, enable immutability only after the draft release has passed final asset QA.
 - Do not enable Zenodo integration for this project unless a later explicit archival decision is made.
 

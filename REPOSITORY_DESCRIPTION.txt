@@ -1,1 +1,1 @@
-Generative AI and large language models: intervention rank reversal across AI-assisted and independent assessment regimes. Code, results, and reproducibility for human–AI collaboration, independent human performance, learning transfer, assessment validity, causal inference, qualitative interaction, meta-analysis, and evidence synthesis.
+Task-specific GenAI intervention ordering: methodological framework, corrected secondary analysis of originality ratings, reproducible summary-statistic inference, reporting schema, tests, and explicit raw-data reproduction limits.

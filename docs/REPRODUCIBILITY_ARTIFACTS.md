@@ -1,3 +1,5 @@
+> **Revision scope (2026-09-14).** Current focal inference is task-specific originality with orientation-plus-Holm p=0.01351; usefulness is secondary. No fresh raw-source participant rerun is claimed. Complete Bassner/Cicek/Zhou raw-to-result pipelines are not supplied. Prior raw-analysis descriptions below document archived provenance, not newly executed validation. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
+
 # Reproducibility and audit artifacts
 
 This page indexes the detailed reproducibility records that support the associated manuscript. Machine-readable ledgers, software-conformance evidence, provenance, and extended computational outputs are maintained in the public research repository rather than expanded in the journal article. The article itself retains the scientific definitions, analysis specifications, direct estimates, uncertainty intervals, inferential boundaries, and, in Appendix A only, the composition/scale sensitivity formalism for regime-agnostic ordering under explicit weighting and scale conventions.

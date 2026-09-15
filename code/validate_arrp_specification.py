@@ -14,7 +14,7 @@ RESULTS = ROOT / 'results'
 
 A_MAP = {'accessible':'available','unavailable':'removed','partial':'restricted','unknown':'unclear'}
 O_MAP = {'same':'same','repeated':'repeated','similar':'similar','novel':'novel','unknown':'unclear'}
-G_MAP = {'none':'none','near':'near','far':'far','domain_shift':'domain/context shift','unknown':'unclear'}
+G_MAP = {'none':'none','near':'near','far':'far','domain_shift':'domain-context-shift','unknown':'unclear'}
 N_MAP = {'prevented':'prevented','monitored':'monitored','verified':'verified','self_report':'self-report','unknown':'unclear'}
 
 def code(features):
@@ -23,7 +23,7 @@ def code(features):
     elif t == 'immediate': D='immediate'
     elif t == 'elapsed':
         v=features.get('timing_value','').strip()
-        if not v or not re.fullmatch(r'\d+(?:\.\d+)?\s+(?:minute|minutes|hour|hours|day|days|week|weeks|month|months)', v):
+        if not v or not re.fullmatch(r'\d+(?:\.\d+)?\s+(?:second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)', v):
             raise AssertionError(f'invalid elapsed timing value: {v!r}')
         D=v
     elif t == 'unknown': D='unclear'

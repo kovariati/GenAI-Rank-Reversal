@@ -61,7 +61,7 @@ article_key = f'{first_family}{year}{project_key}'
 software_key = f'{article_key}Software'
 
 software_description = (
-    f"Public code, results, and reproducibility release for the manuscript '{title}'. "
+    f"Code, results, and reproducibility snapshot for the manuscript '{title}'. "
     "Third-party raw participant data are not redistributed."
 )
 
@@ -133,7 +133,7 @@ software_fields = [
     f'  title = {{{title}}}',
     f'  version = {{{version}}}',
     f'  year = {{{year}}}',
-    '  note = {Public code and reproducibility release}',
+    '  note = {Code and reproducibility snapshot}',
 ]
 if M.get('repository_url'):
     software_fields.append(f"  url = {{{M['repository_url']}}}")
@@ -155,7 +155,7 @@ ris += ris_author_lines(authors)
 ris += [f'TI  - {title}', f'PY  - {year}', f'ET  - {version}']
 if M.get('repository_url'):
     ris.append('UR  - ' + M['repository_url'])
-ris += ['N1  - Public code and reproducibility release', 'ER  - ', '']
+ris += ['N1  - Code and reproducibility snapshot', 'ER  - ', '']
 (ROOT / 'CITATION.ris').write_text('\n'.join(ris), encoding='utf-8')
 
 # CodeMeta 3.1

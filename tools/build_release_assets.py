@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from pathlib import Path
 import argparse
-import hashlib
 import json
 import shutil
 import subprocess
@@ -26,26 +25,7 @@ ARTICLE_TITLE = M['article_title']
 FIXED_DT = (1980, 1, 1, 0, 0, 0)
 
 
-def sha_bytes(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
-
-
-def sha_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open('rb') as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b''):
-            h.update(chunk)
-    return h.hexdigest()
-
-
-def manifest(entries: dict[str, bytes]) -> bytes:
-    lines = [f"{sha_bytes(entries[name])}  {name}" for name in sorted(entries)]
-    return ('\n'.join(lines) + '\n').encode('utf-8')
-
-
 def write_zip(path: Path, entries: dict[str, bytes]) -> None:
-    entries = dict(entries)
-    entries['MANIFEST_SHA256.txt'] = manifest(entries)
     path.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(path, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         for name in sorted(entries):
@@ -73,6 +53,8 @@ def results_and_artifacts_entries() -> dict[str, bytes]:
         'arrp.schema.json',
         'examples/arrp_example_wong_task2.json',
         'docs/ARRP.md',
+        'docs/STATISTICAL_SCOPE.md',
+        'REPRODUCTION_LEVELS.md',
         'docs/METHOD_TO_CODE_MAP.md',
         'docs/REPRODUCIBILITY_ARTIFACTS.md',
         'docs/COMPUTATIONAL_VALIDATION.md',
@@ -117,13 +99,9 @@ def main() -> int:
     filename = f'{PROJECT}-{VERSION}-results-and-artifacts.zip'
     archive = outdir / filename
     write_zip(archive, results_and_artifacts_entries())
-    digest = sha_file(archive)
-    checksum = outdir / (filename + '.sha256')
-    checksum.write_text(f'{digest}  {filename}\n', encoding='utf-8', newline='\n')
 
     print('Built release artifact:')
-    print(f'  {filename}: {archive.stat().st_size} bytes sha256={digest}')
-    print(f'  {checksum.name}')
+    print(f'  {filename}: {archive.stat().st_size} bytes')
     return 0
 
 

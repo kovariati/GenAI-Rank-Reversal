@@ -1,8 +1,8 @@
 {
   "@context": "https://w3id.org/codemeta/3.1",
   "@type": "SoftwareSourceCode",
-  "name": "Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes",
-  "description": "Public code, results, and reproducibility release for the manuscript 'Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes'. Third-party raw participant data are not redistributed.",
+  "name": "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes",
+  "description": "Code, results, and reproducibility snapshot for the manuscript 'Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes'. Third-party raw participant data are not redistributed.",
   "version": "1.0.0",
   "license": "https://spdx.org/licenses/MIT.html",
   "author": [
@@ -20,19 +20,19 @@
   "keywords": [
     "generative artificial intelligence",
     "large language models",
+    "AI in education",
     "human–AI collaboration",
-    "AI-assisted performance",
-    "independent human performance",
-    "learning transfer",
+    "assisted performance",
+    "learning outcomes",
     "assessment validity",
-    "qualitative interaction",
-    "meta-analysis",
-    "assessment-regime rank reversal"
+    "rank reversal",
+    "evidence synthesis",
+    "reporting framework"
   ],
   "citation": {
     "@type": "ScholarlyArticle",
-    "name": "Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes",
-    "abstract": "Generative AI can improve performance while assistance is available without implying equivalent gains in later independent performance. This study examines whether intervention ordering can change across outcome-elicitation contexts and what can be inferred when it does. Assessment-regime rank reversal is defined as a qualitative interaction in which the direct contrast between two interventions changes sign across construct-linked assessment contexts. In Wong and Qiu's randomized creativity study, unrestricted ChatGPT exceeded learner-first AI on the assisted product-improvement task, whereas learner-first AI exceeded unrestricted ChatGPT on the subsequent unassisted product-invention task for originality and usefulness; both directional reversal tests remained significant after Holm adjustment (p=0.0068). Because task content, time, transfer demand, and AI availability changed jointly, this finding is interpreted as a regime-and-task-specific reversal on aligned creativity dimensions, not as an isolated causal effect of AI removal. Bastani and Bassner provide same-sign boundary patterns but do not meet the same evidential standard for robust population preservation. The methodological implication is that randomization identifies contrasts within observed outcome-elicitation contexts but does not guarantee a context-invariant intervention ranking. The Assessment-Regime Reporting Profile (ARRP) is proposed as an outcome-level reporting template for making these distinctions explicit; its executable implementation supports specification conformance but has not undergone independent inter-rater or content-validity evaluation.",
+    "name": "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes",
+    "abstract": "Generative artificial intelligence (AI) and large language models can improve assisted task performance without establishing learning, retention, or transfer. Evaluating AI in education and human–AI collaboration therefore requires distinguishing assisted from independent human performance. A methodological framework separates target constructs, tasks, assessment conditions, and verification evidence to examine when intervention rankings can be compared across assessment regimes. A retrospective secondary analysis uses established statistical procedures to reassess a previously reported comparison of unrestricted and learner-first ChatGPT use. Published rounded summary statistics indicate a task-specific rank reversal in expert-rated originality: unrestricted-minus-learner-first contrasts are +0.78 points for a stuffed-bunny improvement task and −0.73 for a subsequent vocabulary-game task under a no-AI protocol (two-orientation testing; Holm-adjusted p = 0.01351 across originality and usefulness). Usefulness provides secondary corroboration; reversal is not supported for elaboration. These findings concern task-specific product ratings, not general creativity or durable learning. Task content, sequence, and AI-access policy vary together, precluding attribution to AI removal alone. The Assessment-Regime Reporting Profile supports reporting checks but lacks independent validation. The contribution is an auditable workflow for assessment validity and evidence synthesis: intervention comparisons require explicit outcome definitions and defensible comparability assumptions before findings are pooled or generalized.",
     "author": [
       {
         "@type": "Person",
@@ -44,14 +44,14 @@
     "keywords": [
       "generative artificial intelligence",
       "large language models",
+      "AI in education",
       "human–AI collaboration",
-      "AI-assisted performance",
-      "independent human performance",
-      "learning transfer",
+      "assisted performance",
+      "learning outcomes",
       "assessment validity",
-      "qualitative interaction",
-      "meta-analysis",
-      "assessment-regime rank reversal"
+      "rank reversal",
+      "evidence synthesis",
+      "reporting framework"
     ],
     "description": "Preferred scientific citation target; manuscript status until final publication metadata exist."
   },

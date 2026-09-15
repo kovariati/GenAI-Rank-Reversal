@@ -2,7 +2,7 @@ case_id,scenario,A,D,O,G,N,expected_note
 T01,"AI writes part of the scored essay during the same session.",available,concurrent,same,none,unclear,"Joint human-AI performance; no independent-performance claim."
 T02,"One hour later, students repeat the same items on paper under proctoring with AI prohibited.",removed,"1 hour",repeated,none,prevented,"Independent repeated-item performance, not transfer."
 T03,"Immediately after AI-supported practice, students solve new isomorphic problems without AI in a monitored lab.",removed,immediate,similar,near,monitored,"Immediate near-transfer evidence."
-T04,"Two weeks later, participants complete a novel task in a new context with device restrictions and logs.",removed,"14 days",novel,"domain/context shift",verified,"Delayed transfer evidence under documented non-use."
+T04,"Two weeks later, participants complete a novel task in a new context with device restrictions and logs.",removed,"14 days",novel,"domain-context-shift",verified,"Delayed transfer evidence under documented non-use."
 T05,"A paper reports a post-test but does not state whether AI was accessible.",unclear,unclear,unclear,unclear,unclear,"Do not infer AI removal from the word post-test."
 T06,"AI is disabled for text generation but grammar correction remains available during the scored response.",restricted,immediate,similar,near,verified,"Report the exact restriction scope; not fully AI-free."
 T07,"Participants use AI on Task 1 and perform a different creativity task without AI immediately afterward.",removed,immediate,novel,near,verified,"Regime changes along multiple dimensions; not an isolated AI-removal effect."

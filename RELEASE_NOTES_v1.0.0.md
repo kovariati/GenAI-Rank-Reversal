@@ -2,11 +2,11 @@
 
 This file is a **DRAFT RELEASE TEMPLATE** for the planned publication-linked v1.0.0 release of code, results, and reproducibility materials associated with the manuscript:
 
-> **Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes**
+> **Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes**
 
 ## Preferred citation
 
-**Kovari, A. (2026). _Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes_. Manuscript.**
+**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Manuscript.**
 
 The final journal citation, DOI, and publisher link will be added only after a final publication record exists. No provisional or fabricated DOI is used. The version-specific `v1.0.0` release is finalized only after those definitive article metadata exist, so the repository citation files and release metadata can be synchronized before the release is frozen.
 
@@ -70,17 +70,13 @@ ARRP is derived from the identification problem addressed in the manuscript. It 
 
 See `docs/ARRP.md`, `arrp.schema.json`, and the machine-readable worked example in `examples/`.
 
-## Key scientific result
+## Key scientific result and statistical scope
 
-The Wong–Qiu data provide the focal constructive counterexample. For unrestricted ChatGPT versus a learner-first design, the intervention ordering changes between AI-assisted assessment and subsequent unassisted creative transfer. Direct regime-specific inference supports opposite-signed contrasts for both originality and usefulness.
+This is a methodological framework and retrospective secondary analysis, not a new statistical method. Wong and Qiu already reported the interaction and opposite active-arm comparisons. The focal endpoint here is expert-rated originality of products in two named tasks: stuffed-bunny improvement and vocabulary-game invention. The published-summary unrestricted-minus-learner-first contrasts are +0.78 and -0.73. Accounting for both reversal orientations and applying Holm across the retained originality/usefulness family gives p=0.01351 for each outcome. Usefulness is secondary, task-goal-relative corroboration. The separate three-dimension family gives p=0.02027 for originality/usefulness and p=0.92891 for elaboration; the latter does not show supported reversal.
 
-The result establishes a **non-guarantee, not a prevalence estimate**:
+These ratings do not establish a common latent creativity scale, durable learning, an isolated AI-removal effect, or performance on unobserved tasks. The elementary model argument establishes only that randomization imposes no cross-context sign restriction by itself; one empirical example is not treated as proof of a universal population claim. The comparison-scope gate is enforced by code and does not upgrade task-specific ratings into a shared latent construct.
 
-> **One verified reversal is sufficient to show that rank preservation across assessment regimes does not follow automatically from randomization.**
-
-The framework does **not** predict that rankings must reverse. Rank preservation is also a possible and informative empirical result.
-
-Cross-regime rank comparison is interpreted only when the compared outcomes have a defensible construct link and common directional interpretation. Otherwise the outcomes should be treated as non-commensurable rather than classified as rank-preserved or rank-reversed.
+The full revised self-contained validator passes, including 56 pytest cases and 62 ARRP specification checks. These checks are not independent content-validity or human-coding-reliability evidence. Fresh results come from published summary statistics and supplied-table derivations; archived participant-level bootstrap/permutation/model outputs were not freshly rerun. Complete raw-to-result pipelines are not supplied for Bassner, Cicek or Zhou. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
 
 ## Implications for meta-analysis and evidence synthesis
 
@@ -92,7 +88,7 @@ The included seven-synthesis audit is a diagnostic of **coding-schema vulnerabil
 
 ## Source code and reproducibility
 
-The complete versioned source code, validation tools, reporting schemas, environment specification, documentation, and small canonical outputs are contained directly in the **`v1.0.0` Git tag**.
+When the publication-linked release is created, the versioned source code, validation tools, reporting schemas, environment specification, documentation, and small canonical outputs are intended to be contained in the **`v1.0.0` Git tag**. The present deliverable is a local revised snapshot, not evidence that this tag or release is live.
 
 GitHub automatically provides downloadable archives under **Source code (zip)** and **Source code (tar.gz)**. A separate full-repository reproducibility archive is intentionally not attached because it would duplicate the tagged source tree.
 
@@ -113,16 +109,6 @@ The public validation does not require redistribution of third-party participant
 ### `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`
 
 Convenience bundle containing canonical derived numerical results, result tables, manuscript-facing figures, ARRP schema/example, public provenance summaries, and release-validation material.
-
-**SHA-256**
-
-`8229fca4c5f4815ddb34cd0e813f8fe4deb3fb83079591aa503afea4ad8c0c74`
-
-Companion checksum file:
-
-`GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip.sha256`
-
-The archive also contains its own file-level `MANIFEST_SHA256.txt`.
 
 Large or non-redistributable third-party participant-level data are intentionally not included.
 
@@ -165,8 +151,8 @@ These metadata are generated from the canonical `PROJECT_METADATA.json` source a
 **Article DOI:** to be added after publication  
 **Publisher article:** to be added after publication
 
-## Integrity and versioning
+## Validation and versioning
 
 When created after definitive publication metadata are available, the planned publication-linked `v1.0.0` tag will identify the canonical article-associated scientific state of the code, derived results, ARRP reporting template, and reproducibility infrastructure. Until then, the public repository remains the reviewable pre-release state.
 
-Scientific release artifacts should not be silently replaced. Any later scientific or packaging change that alters a released artifact should use a new semantic version and new checksum.
+Scientific release artifacts should not be silently replaced. Any later scientific or packaging change that alters a released artifact should use a new semantic version and an updated change log.

@@ -1,19 +1,15 @@
-# Reproduction levels
+# Reproduction levels for this revised snapshot
 
-## Level 1 — Smoke and public-repository quality gate
-Runs metadata parsing, public-hygiene scans, construct/ARRP validators, genuine mathematical/algorithmic pytest regression tests and headline-result tests. No third-party raw data required.
+## Self-contained numerical reconstruction
 
-## Level 2 — Shipped/prepared-artifact validation
-Regenerates self-contained direct-reversal, rank-sensitivity, rank-robustness and manuscript-facing paired-evidence outputs from distributed inputs and compares them with canonical results. Rebuilds paired profiles from distributed derived tables.
+Published rounded Wong n/mean/SD regenerate the direct contrasts, orientation-aware tests, simultaneous intervals and three-dimension sensitivity. Supplied aggregate outputs regenerate paired profiles/evidence and deterministic score/weight diagnostics. This layer is freshly executed.
 
-## Level 3 — Third-party-data regeneration
-Requires source data acquired from the original publications/repositories. Re-runs participant-level/public-study analyses and derived profiles. Redistribution restrictions remain in force.
+## Software verification
 
-## Level 4 — Optional extensions
-Evidence-map updates or additional sensitivity analyses that are not part of the canonical paper reproduction. These must not silently replace the audited result set or, after publication, the `v1.0.0` scientific result set.
+The 56 pytest cases, 62 ARRP specification checks, full JSON-Schema validation, metadata checks and 32-package dependency closure are executable without third-party raw records. These tests verify code and specification behavior, not construct validity or every source coding.
 
-## Mathematical and algorithmic regression tests
+## Raw-dependent archived analyses
 
-Run `python -m pytest -q` after installing `requirements-lock.txt`. The audited suite contains 16 genuine pytest tests. They independently check the direct Welch/IUT/Holm logic, Bassner HC3/Welch calculations and source-order preprocessing rule, Wong randomization-statistic identity, Bastani symmetrical preservation rule, rank-robustness algebra, manuscript-facing paired-evidence regeneration, repository-root resolution, bootstrap sign-tail field semantics, stale artifact-name removal, pre-publication release-state semantics, and the separation of descriptive same-sign patterns from population-preservation claims.
+No third-party raw participant files were supplied or successfully retrieved in this revision. Wong/Bastani/Kestin/Pardos raw-dependent programs are included, but their participant analyses were not rerun. Bassner's helper additionally requires prepared columns; its complete raw-to-prepared procedure is missing. Complete raw-to-result code is not supplied for Cicek or Zhou. Archived stochastic outputs are not silently promoted to fresh reproductions.
 
-The public repository does not redistribute third-party participant-level raw data. Consequently, a clean public validation is not described as a full raw-source rerun of the Wong 99,999-permutation analysis or the Bastani 9,999-replicate Webb wild-cluster analysis.
+The current annotation of the archived Wong permutation table changes terminology and computes Holm on existing marginal p values; no permutation draw or raw model was regenerated. See `results/revision_validation_scope.json`.

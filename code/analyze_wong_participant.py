@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import argparse, hashlib, json
+import argparse, json
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
@@ -19,6 +19,8 @@ def _metrics(df, out1, out2):
         z=df[df.Condition==c]
         m[(c,1)]=float(z[out1].mean()); m[(c,2)]=float(z[out2].mean())
     s[1]=float(df[df.Condition==0][out1].std(ddof=1)); s[2]=float(df[df.Condition==0][out2].std(ddof=1))
+    if not all(np.isfinite(v) and v > 0 for v in s.values()):
+        raise ValueError('Positive finite task-specific control SD required')
     eff={}; raw={}
     for c in [1,2]:
         r1=m[(c,1)]-m[(0,1)]; r2=m[(c,2)]-m[(0,2)]
@@ -27,10 +29,16 @@ def _metrics(df, out1, out2):
     return eff, eff[2][2]-eff[1][2], raw, raw[2][2]-raw[1][2]
 
 def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
+    if not isinstance(reps,int) or reps < 2 or not isinstance(permutation_reps,int) or permutation_reps < 2:
+        raise ValueError('Bootstrap and permutation replicate counts must be integers >= 2')
     d=pd.read_excel(raw_xlsx, sheet_name='Data')
     req=['Condition','Originality1','Originality2','Usefulness1','Usefulness2']
     if any(c not in d.columns for c in req): raise ValueError('Wong workbook missing required columns')
-    d=d[req].copy()
+    d=d[req].apply(pd.to_numeric,errors='raise').copy().reset_index(drop=True)
+    if not np.isfinite(d.to_numpy(dtype=float)).all():
+        raise ValueError('All required participant values must be finite; missing scores are not silently dropped')
+    if ((d[req[1:]] < 1) | (d[req[1:]] > 7)).any().any():
+        raise ValueError('Expected source rating scores between 1 and 7')
     if len(d)!=196 or sorted(d.Condition.value_counts().to_dict().items())!=[(0,64),(1,67),(2,65)]:
         raise ValueError('Unexpected Wong sample structure')
     rng=np.random.default_rng(SEED)
@@ -66,7 +74,7 @@ def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
     # conditions; it is not interpreted as the causal effect of removing AI because
     # task content and assessment conditions also change.
     interaction_rows=[]
-    dd=pd.read_excel(raw_xlsx, sheet_name='Data').reset_index(drop=True)
+    dd=d.copy()
     dd['participant_id']=np.arange(len(dd),dtype=int)
     ctrl=dd[dd.Condition==0]
     for outcome,o1,o2 in [('Originality','Originality1','Originality2'),('Usefulness','Usefulness1','Usefulness2')]:
@@ -91,7 +99,9 @@ def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
     # (independent minus assisted) between learner-first and unrestricted arms.
     # This is algebraically the raw learner_first x independent interaction.
     # Originality and usefulness are treated jointly as the two creativity outcomes
-    # analyzed in the source study; max-|T| adjustment controls familywise error.
+    # analyzed in the source study. Constant permutation-SD scaling is NOT
+    # heteroscedastic studentization. max-|T| here is a complete-sharp-null
+    # diagnostic; strong marginal FWER control is not asserted.
     ai=dd[dd.Condition.isin([1,2])].copy().reset_index(drop=True)
     n_ai=len(ai); n_lf=int((ai.Condition==2).sum()); n_u=int((ai.Condition==1).sum())
     if (n_ai,n_lf,n_u)!=(132,65,67):
@@ -112,6 +122,8 @@ def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
         for outcome,x in changes.items():
             perm_stats[outcome][bidx]=x[mask].mean()-x[~mask].mean()
     perm_sd={k:float(np.std(v,ddof=1)) for k,v in perm_stats.items()}
+    if not all(np.isfinite(v) and v > 0 for v in perm_sd.values()):
+        raise ValueError('Positive permutation variance required for standardized diagnostics')
     max_t=np.maximum.reduce([np.abs(perm_stats[k]/perm_sd[k]) for k in changes])
     ri_rows=[]
     for outcome in ['Originality','Usefulness']:
@@ -124,13 +136,19 @@ def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
             estimand='difference in (independent - assisted) change: learner-first minus unrestricted',
             observed_raw_interaction=obs,
             permutation_sd=perm_sd[outcome],
-            studentized_abs_stat=obs_t,
+            permutation_standardized_abs_stat=obs_t,
             randomization_p_two_sided=p_unadj,
-            maxT_fwer_p=p_max,
+            maxT_global_null_adjusted_p=p_max,
             permutation_reps=permutation_reps,
             permutation_seed=SEED+1900,
             conditioned_on='two randomized AI arms; fixed group sizes 65 learner-first / 67 unrestricted',
+            null_scope='exchangeable labels under sharp no-effect-on-individual-task-change null; not the weak mean-interaction null',
+            standardization='constant permutation SD; not per-permutation Welch studentization',
         ))
+
+    from analyze_wong_direct_reversal import holm_adjust
+    for row,p_adj in zip(ri_rows,holm_adjust([row['randomization_p_two_sided'] for row in ri_rows])):
+        row['holm_adjusted_marginal_sharp_null_p']=p_adj
 
     results.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(all_rows).to_csv(results/'wong_participant_reanalysis.csv',index=False)
@@ -138,7 +156,7 @@ def analyze(raw_xlsx: Path, results: Path, reps=9999, permutation_reps=99999):
     pd.DataFrame(interaction_rows).to_csv(results/'wong_interaction_model.csv',index=False)
     pd.DataFrame(mean_rows).to_csv(results/'wong_raw_group_means.csv',index=False)
     pd.DataFrame(ri_rows).to_csv(results/'wong_randomization_inference.csv',index=False)
-    prov={'source':'Wong & Qiu OSF t7an8 Supplemental Data.xlsx','source_url':'https://osf.io/t7an8/','sha256':hashlib.sha256(raw_xlsx.read_bytes()).hexdigest(),'rows':len(d),'raw_redistributed':False,'bootstrap_seed':SEED,'bootstrap_reps':reps,'interaction_model':'OLS arm x assessment regime with participant-clustered covariance; descriptive differential profile, not causal AI-removal effect','randomization_inference':'conditional label permutation within the two randomized AI arms, preserving 65/67 group sizes; originality and usefulness jointly adjusted by max-|T|','permutation_seed':SEED+1900,'permutation_reps':permutation_reps}
+    prov={'source':'Wong & Qiu OSF t7an8 Supplemental Data.xlsx','source_url':'https://osf.io/t7an8/','rows':len(d),'raw_redistributed':False,'bootstrap_seed':SEED,'bootstrap_reps':reps,'interaction_model':'OLS arm x assessment regime with participant-clustered covariance; descriptive differential profile, not causal AI-removal effect','randomization_inference':'conditional label permutation within the two randomized AI arms, preserving 65/67 group sizes; max-|T| complete-null diagnostic; Holm across marginal sharp-null p values; not a test of strict sign reversal','permutation_seed':SEED+1900,'permutation_reps':permutation_reps}
     (results/'wong_source_provenance.json').write_text(json.dumps(prov,indent=2),encoding='utf-8')
     print(pd.DataFrame(all_rows).to_string(index=False)); print(pd.DataFrame(diff_rows).to_string(index=False)); print(pd.DataFrame(interaction_rows).to_string(index=False)); print(pd.DataFrame(ri_rows).to_string(index=False)); print(json.dumps(prov,indent=2))
 

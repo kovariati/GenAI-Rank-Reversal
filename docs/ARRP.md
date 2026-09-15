@@ -22,7 +22,7 @@ ARRP fields span different structural roles and do **not** constitute a causal t
 
 ## Worked example
 
-[`examples/arrp_example_wong_task2.json`](../examples/arrp_example_wong_task2.json) encodes the subsequent unassisted creative-transfer originality outcome from Wong & Qiu (2026): AI removed, immediate transition, novel task, within-domain creative transfer, and documented AI non-use. The example explicitly preserves the boundary that task identity and transfer demand changed, so it is not an isolated AI-removal effect.
+[`examples/arrp_example_wong_task2.json`](../examples/arrp_example_wong_task2.json) concerns the vocabulary-game product's originality score. It records source-reported Task 2 ChatGPT removal and protocol prevention, not independent verification; exact delay and near/far transfer distance are not manufactured. Task scoring does not establish a common latent creativity construct.
 
 ## Use ARRP when…
 
@@ -57,3 +57,5 @@ python code/validate_arrp_specification.py
 ## How to cite ARRP
 
 If the ARRP concepts, decision rules, or scientific interpretation contribute to your work, cite the associated manuscript/article using [`CITATION.cff`](../CITATION.cff), [`CITATION.bib`](../CITATION.bib), or [`CITATION.ris`](../CITATION.ris). If you directly reuse or modify the executable schema/code, also cite the software release and follow the code/data license guidance.
+
+Full Draft 2020-12 instance validation now covers required and additional fields, types, nonblank evidence, and conditional exact-delay fields. The actual rank-classification pipeline separately enforces comparison eligibility. These are computational checks, not validation of author coding.

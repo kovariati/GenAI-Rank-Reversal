@@ -7,7 +7,7 @@ p = ROOT / 'results' / 'arrp_operational_test_cases.csv'
 allowed = {
     'A': {'available','removed','restricted','unclear'},
     'O': {'same','repeated','similar','novel','unclear'},
-    'G': {'none','near','far','domain/context shift','unclear'},
+    'G': {'none','near','far','domain-context-shift','unclear'},
     'N': {'prevented','monitored','verified','self-report','unclear'},
 }
 rows=list(csv.DictReader(p.open(encoding='utf-8-sig')))

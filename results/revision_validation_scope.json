@@ -1,0 +1,31 @@
+{
+  "revision_date": "2026-09-14",
+  "source_data_policy": "No third-party raw participant files were included in the supplied archives; none was retrieved successfully in this revision. No raw-source rerun is claimed.",
+  "freshly_recomputed": [
+    "Wong task-specific contrasts and Welch intervals from peer-reviewed rounded n/mean/SD",
+    "two-orientation reversal IUT/Bonferroni plus two-outcome Holm adjustment",
+    "four-contrast Bonferroni simultaneous intervals",
+    "secondary three-dimension family including elaboration",
+    "paired profile and evidence-table derivations from distributed summary outputs",
+    "fixed-scale and weight/scale assumption sensitivity",
+    "full JSON-Schema validation and software regression tests"
+  ],
+  "archived_not_raw_rerun": [
+    "Wong participant bootstrap, clustered interaction, and 99,999 label permutations",
+    "Bastani cluster models and 9,999 Webb wild-cluster replicates",
+    "Bassner full 452-to-275 preprocessing and participant models",
+    "Kestin and Pardos participant models",
+    "Cicek and Zhou participant models"
+  ],
+  "archived_permutation_table_edits": "Only terminology/null-scope annotation and Holm adjustment of existing marginal p values were changed. Permutation draws, interaction estimates, and numerical max-statistic values were not regenerated.",
+  "pipeline_completeness": {
+    "Bastani": "raw-dependent analysis supplied; raw inputs absent",
+    "Kestin": "raw-dependent analysis supplied; raw inputs absent",
+    "Pardos": "raw-dependent analysis supplied; raw inputs absent",
+    "Wong & Qiu": "raw-dependent analysis supplied; raw workbook absent",
+    "Bassner": "helper requires source-aligned prepared columns; complete raw-to-prepared transformation not supplied",
+    "Cicek": "derived outputs supplied; complete raw pipeline not supplied",
+    "Zhou": "derived outputs supplied; complete raw pipeline not supplied; author-reported access-controlled source cannot be independently checked here"
+  },
+  "publication_status": "Local revision only; no GitHub upload, live release, publication DOI, or journal acceptance is claimed."
+}

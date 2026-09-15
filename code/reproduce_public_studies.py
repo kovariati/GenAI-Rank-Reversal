@@ -7,7 +7,7 @@ three user-supplied/public source files at paths given by command line options
 or the defaults below.
 """
 from __future__ import annotations
-import argparse, hashlib, json, math, os, platform, sys
+import argparse, json, math, os, platform, sys
 from pathlib import Path
 
 import numpy as np
@@ -20,14 +20,6 @@ from sklearn.linear_model import QuantileRegressor
 
 SEED = 20260816
 np.random.seed(SEED)
-
-
-def sha256(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open('rb') as f:
-        for chunk in iter(lambda: f.read(1024*1024), b''):
-            h.update(chunk)
-    return h.hexdigest()
 
 
 def term_stats(res, term: str):
@@ -250,7 +242,7 @@ def main():
     paths={k:Path(v) for k,v in [('Bastani',args.bastani),('Kestin',args.kestin),('Pardos',args.pardos)]}
     provenance=[]
     for k,p in paths.items():
-        provenance.append({'study':k,'source_file':p.name,'sha256':sha256(p),'bytes':p.stat().st_size})
+        provenance.append({'study':k,'source_file':p.name,'bytes':p.stat().st_size})
     pd.DataFrame(provenance).to_csv(resdir/'source_provenance.csv',index=False)
 
     # ---------------- Bastani et al. ----------------

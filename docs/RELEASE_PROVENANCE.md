@@ -1,3 +1,5 @@
+> **Revision scope (2026-09-14).** Current focal inference is task-specific originality with orientation-plus-Holm p=0.01351; usefulness is secondary. No fresh raw-source participant rerun is claimed. Complete Bassner/Cicek/Zhou raw-to-result pipelines are not supplied. Prior raw-analysis descriptions below document archived provenance, not newly executed validation. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
+
 # DRAFT RELEASE TEMPLATE — provenance
 
 No `v1.0.0` release is live yet. This document describes the **planned publication-linked v1.0.0 release** associated with the manuscript identity in `PROJECT_METADATA.json`.
@@ -9,7 +11,6 @@ Once created after final publication metadata are available, the **Git tag `v1.0
 The only custom scientific bundle is:
 
 - `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`
-- `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip.sha256`
 
 The bundle contains canonical derived results, manuscript-facing figures, ARRP schema/example, public provenance summaries, and release-validation material. It does not contain third-party raw participant data.
 

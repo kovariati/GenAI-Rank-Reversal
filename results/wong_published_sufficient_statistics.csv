@@ -1,13 +1,19 @@
 study,group,task,assistance_condition,outcome,n,mean,sd,source_doi,note
 Wong & Qiu (2026),Human-only,Task 1 product improvement,human-only,originality,64,3.06,1.37,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Unrestricted ChatGPT,Task 1 product improvement,AI available,originality,67,4.08,1.22,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
-Wong & Qiu (2026),Think-first ChatGPT-later,Task 1 product improvement,AI available after learner-first work,originality,65,3.3,1.3,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
+Wong & Qiu (2026),Think-first ChatGPT-later,Task 1 product improvement,restricted phases: 3 min self / 6 min AI / 3 min notes-only finalization,originality,65,3.3,1.3,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Human-only,Task 2 product invention,AI removed,originality,64,2.63,1.45,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Unrestricted ChatGPT,Task 2 product invention,AI removed,originality,67,2.69,1.44,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Think-first ChatGPT-later,Task 2 product invention,AI removed,originality,65,3.42,1.63,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Human-only,Task 1 product improvement,human-only,usefulness,64,3.79,1.27,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Unrestricted ChatGPT,Task 1 product improvement,AI available,usefulness,67,4.29,1.05,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
-Wong & Qiu (2026),Think-first ChatGPT-later,Task 1 product improvement,AI available after learner-first work,usefulness,65,3.63,1.16,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
+Wong & Qiu (2026),Think-first ChatGPT-later,Task 1 product improvement,restricted phases: 3 min self / 6 min AI / 3 min notes-only finalization,usefulness,65,3.63,1.16,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Human-only,Task 2 product invention,AI removed,usefulness,64,3.77,1.23,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Unrestricted ChatGPT,Task 2 product invention,AI removed,usefulness,67,3.81,1.2,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
 Wong & Qiu (2026),Think-first ChatGPT-later,Task 2 product invention,AI removed,usefulness,65,4.39,1.22,10.1007/s10648-026-10118-7,Peer-reviewed published descriptive statistic
+Wong & Qiu (2026),Human-only,Task 1 product improvement,arm-specific Task 1 access policy,Elaboration,64,4.42,1.77,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"
+Wong & Qiu (2026),Unrestricted ChatGPT,Task 1 product improvement,arm-specific Task 1 access policy,Elaboration,67,4.83,1.48,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"
+Wong & Qiu (2026),Think-first ChatGPT-later,Task 1 product improvement,restricted phases: 3 min self / 6 min AI / 3 min notes-only finalization,Elaboration,65,2.98,1.79,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"
+Wong & Qiu (2026),Human-only,Task 2 product invention,AI removed,Elaboration,64,4.4,1.58,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"
+Wong & Qiu (2026),Unrestricted ChatGPT,Task 2 product invention,AI removed,Elaboration,67,4.56,1.33,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"
+Wong & Qiu (2026),Think-first ChatGPT-later,Task 2 product invention,AI removed,Elaboration,65,4.58,1.24,10.1007/s10648-026-10118-7,"Published Table/Results elaboration descriptives; secondary three-dimension sensitivity, not a co-primary creativity endpoint"

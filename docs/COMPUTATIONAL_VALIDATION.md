@@ -1,27 +1,7 @@
 # Computational validation
 
-The computational code audit validates the mathematics, algorithmic identities, manuscript-facing numerical regeneration, repository path handling, result-status logic, and pre-publication release semantics.
+The revised suite contains 56 pytest cases. It checks Welch against SciPy, two-orientation symmetry, retained-family correction, simultaneous intervals, the elaboration family, invalid statistics, actual commensurability gating, ties and nonfinite values, dynamic significance status, the direction-aware shift ratio, monotone-transformation counterexamples, invalid grid termination, complete JSON-Schema validation, and the retained baseline identities.
 
-## Regression-test layer
+Run `python -m pytest -q` or the complete gate `python tools/validate_repository.py`. The latter also checks metadata, dependency closure, deterministic numerical regeneration, 62 ARRP specification checks, and expected outputs. Regenerated results and metadata are compared directly using their actual file contents. Structural conformance is not validation of scientific interpretation, human reliability, or population generalization.
 
-The public test suite contains 16 mathematical/algorithmic regression tests. It covers the Wong direct Welch calculations, intersection-union and Holm logic, participant-level randomization-statistic identity, Bassner HC3 and exact Welch contrasts, the Bastani symmetrical preservation rule, rank-weighting/scale robustness algebra, sensitivity identities, paired-evidence regeneration, Bassner source-order preprocessing behavior, corrected repository-root resolution, descriptive bootstrap-field semantics, stale-artifact prevention, and pre-publication release-state behavior.
-
-Run:
-
-```bash
-python -m pytest -q
-```
-
-The repository-wide gate additionally checks metadata consistency, dependency locking, public-release hygiene, construct/task eligibility, ARRP specification conformance, expected scientific results, and deterministic regeneration of self-contained outputs:
-
-```bash
-python tools/validate_repository.py
-```
-
-## Raw-source boundary
-
-The public repository does not redistribute every third-party participant-level source file. Therefore, the public validation is not described as a fresh end-to-end raw-source rerun of analyses such as the Wong 99,999-permutation analysis or the Bastani 9,999-replicate Webb wild-cluster analysis. Their algorithms, derived outputs, source logic, and independent invariants are audited. The Wong direct opposite-sign inference is self-contained and regenerates from released sufficient statistics.
-
-## Scientific boundary
-
-These checks establish computational consistency and software regression protection. They do not establish external validity, construct validity, or human reliability of ARRP.
+No raw-source rerun of archived participant models is claimed. The primary sign audit uses published rounded statistics. The accompanying scope manifest identifies absent raw data and incomplete Bassner/Cicek/Zhou raw-to-result implementations.

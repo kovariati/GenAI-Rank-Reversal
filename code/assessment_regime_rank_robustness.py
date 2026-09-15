@@ -34,16 +34,22 @@ def load_defaults():
                                 float(u["independent_task_mean"])-float(l["independent_task_mean"]))
     return out
 
-DEFAULTS = load_defaults()
+def lambda_grid(lo, hi, step):
+    if not all(math.isfinite(v) for v in (lo, hi, step)) or not 0 < lo <= hi or step <= 0:
+        raise ValueError('Finite 0 < lambda_min <= lambda_max and positive step required')
+    n = int(math.floor((hi-lo)/step + 1e-10)) + 1
+    if n > 1000000:
+        raise ValueError('Grid exceeds one million points')
+    return [round(lo + j*step, 10) for j in range(n)]
 
 def w_star(d_a: float, d_i: float, lam: float) -> float:
-    if not (d_a > 0 and d_i < 0 and lam > 0):
+    if not all(math.isfinite(v) for v in (d_a,d_i,lam)) or not (d_a > 0 and d_i < 0 and lam > 0):
         raise ValueError("Requires D_A>0, D_I<0, lambda>0")
     return (-d_i) / (lam * d_a - d_i)
 
 def classify_rectangle(d_a: float, d_i: float, w_l: float, w_u: float,
                        lam_l: float, lam_u: float) -> str:
-    if not (0 <= w_l <= w_u <= 1 and 0 < lam_l <= lam_u):
+    if not all(math.isfinite(v) for v in (w_l,w_u,lam_l,lam_u)) or not (0 <= w_l <= w_u <= 1 and 0 < lam_l <= lam_u):
         raise ValueError("Invalid rectangle bounds")
     high_thr = w_star(d_a, d_i, lam_l)  # largest threshold
     low_thr = w_star(d_a, d_i, lam_u)   # smallest threshold
@@ -66,15 +72,13 @@ def main() -> None:
     grid_out = Path(args.grid_out); grid_out.parent.mkdir(parents=True, exist_ok=True)
     summary_out = Path(args.summary_out); summary_out.parent.mkdir(parents=True, exist_ok=True)
 
-    lams = []
-    x = args.lambda_min
-    while x <= args.lambda_max + 1e-12:
-        lams.append(round(x, 10)); x += args.lambda_step
+    lams = lambda_grid(args.lambda_min,args.lambda_max,args.lambda_step)
+    defaults = load_defaults()
 
     with grid_out.open("w", newline="", encoding="utf-8") as f:
         wr = csv.writer(f, lineterminator="\n")
         wr.writerow(["outcome","D_A","D_I","lambda","w_star","interpretation"])
-        for outcome, (d_a, d_i) in DEFAULTS.items():
+        for outcome, (d_a, d_i) in defaults.items():
             for lam in lams:
                 wr.writerow([outcome, f"{d_a:.6f}", f"{d_i:.6f}", f"{lam:.6f}",
                              f"{w_star(d_a,d_i,lam):.9f}",
@@ -91,13 +95,13 @@ def main() -> None:
         wr = csv.writer(f, lineterminator="\n")
         wr.writerow(["outcome","D_A","D_I","rectangle","w_L","w_U","lambda_L","lambda_U",
                      "w_star_lambda_L","w_star_lambda_U","classification","note"])
-        for outcome, (d_a,d_i) in DEFAULTS.items():
+        for outcome, (d_a,d_i) in defaults.items():
             for name,w_l,w_u,lam_l,lam_u in rectangles:
                 wr.writerow([outcome, f"{d_a:.6f}", f"{d_i:.6f}", name,
                              f"{w_l:.3f}", f"{w_u:.3f}", f"{lam_l:.3f}", f"{lam_u:.3f}",
                              f"{w_star(d_a,d_i,lam_l):.9f}", f"{w_star(d_a,d_i,lam_u):.9f}",
                              classify_rectangle(d_a,d_i,w_l,w_u,lam_l,lam_u),
-                             "Sensitivity classification; not a recommended synthesis estimand"])
+                             "Point-estimate assumption sensitivity only; not a sampling confidence region or recommended synthesis estimand"])
 
 if __name__ == "__main__":
     main()

@@ -5,7 +5,7 @@
     "doi": "10.1007/s10648-026-10118-7",
     "url": "https://doi.org/10.1007/s10648-026-10118-7"
   },
-  "construct_interpretation": "Independent creative-transfer performance scored on originality; construct link is defensible across the paired creativity tasks, while task identity and transfer demand differ.",
+  "construct_interpretation": "Expert-rated originality of the submitted vocabulary-game product; task-specific score, not general creativity or durable learning.",
   "A": {
     "status": "removed",
     "detail": "Construct-relevant ChatGPT was unavailable during Task 2.",
@@ -13,7 +13,7 @@
   },
   "D": {
     "category": "immediate",
-    "detail": "Task 2 followed the assisted task in the same experimental sequence.",
+    "detail": "Same-session subsequent task after an intervening questionnaire; exact elapsed time since final AI use not reported.",
     "source_evidence": "Published experimental procedure."
   },
   "O": {
@@ -22,15 +22,15 @@
     "source_evidence": "Published task descriptions."
   },
   "G": {
-    "status": "near",
-    "detail": "Creative transfer within the same broad creativity construct to a novel product task.",
-    "source_evidence": "Task relation and common creativity scoring dimensions."
+    "status": "unclear",
+    "detail": "Different product and task demands; a calibrated near/far transfer distance or common latent scale is not established.",
+    "source_evidence": "Published descriptions: stuffed-bunny improvement and vocabulary-game invention."
   },
   "N": {
-    "status": "verified",
-    "scope": "Construct-relevant ChatGPT use during the scored Task 2 response.",
-    "detail": "AI was unavailable in the independent transfer task.",
-    "source_evidence": "Published procedure and assessment environment."
+    "status": "prevented",
+    "scope": "Source-reported absence of access to the study-provided ChatGPT interface and supplied prompts in Task 2.",
+    "detail": "Protocol-based prevention is reported; an independent non-use audit, device-wide restriction log, or verification of every possible AI channel is not reported in the inspected procedure.",
+    "source_evidence": "Published Procedure, Post-Intervention Stage states the task was completed without access to ChatGPT or the supplied prompts."
   },
-  "notes": "Worked example for schema use; it does not imply that AI removal alone caused the cross-regime difference."
+  "notes": "Worked author coding, not independently validated. A=removed records the reported condition; N=prevented records source-reported protocol control, not independently verified non-use. Transfer distance remains unclear."
 }

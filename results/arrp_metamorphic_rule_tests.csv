@@ -6,6 +6,6 @@ M04,D,unavailable,elapsed,7 days,similar,near,verified,unavailable,unknown,,simi
 M05,O,unavailable,immediate,,similar,near,verified,unavailable,immediate,,repeated,near,verified,Only O changes: similar -> repeated.
 M06,O,unavailable,immediate,,repeated,none,verified,unavailable,immediate,,unknown,none,verified,Only O changes: repeated -> unclear.
 M07,G,unavailable,immediate,,novel,near,verified,unavailable,immediate,,novel,far,verified,Only G changes: near -> far.
-M08,G,unavailable,immediate,,novel,far,verified,unavailable,immediate,,novel,domain_shift,verified,Only G changes: far -> domain/context shift.
+M08,G,unavailable,immediate,,novel,far,verified,unavailable,immediate,,novel,domain_shift,verified,Only G changes: far -> domain-context-shift.
 M09,N,unavailable,immediate,,similar,near,monitored,unavailable,immediate,,similar,near,verified,Only N changes: monitored -> verified.
 M10,N,unavailable,immediate,,similar,near,verified,unavailable,immediate,,similar,near,unknown,Only N changes: verified -> unclear.

@@ -36,7 +36,7 @@ def test_bassner_hc3_closed_form_matches_statsmodels():
  fit=smf.ols('y ~ C(g)',df).fit(cov_type='HC3'); est,lo,hi=evidence._hc3_two_group(int(c.n),c.exercise_mean,c.exercise_sd,int(i.n),i.exercise_mean,i.exercise_sd); term='C(g)[T.CHATGPT]'; ci=fit.conf_int().loc[term]
  assert est==pytest.approx(fit.params[term],abs=1e-12); assert lo==pytest.approx(ci.iloc[0],abs=1e-12); assert hi==pytest.approx(ci.iloc[1],abs=1e-12)
 
-def test_bassner_exact_welch_ci():
+def test_bassner_welch_satterthwaite_ci():
  d=pd.read_csv(RESULTS/'bassner_descriptives.csv').set_index('experiment_group'); c,i=d.loc['CHATGPT'],d.loc['IRIS']; est,lo,hi=evidence._welch(int(c.n),c.post_knowledge_mean,c.post_knowledge_sd,int(i.n),i.post_knowledge_mean,i.post_knowledge_sd)
  assert est==pytest.approx(0.2689810189810191,abs=1e-15); assert lo==pytest.approx(-0.29486047502963264,abs=1e-12); assert hi==pytest.approx(0.8328225129916709,abs=1e-12)
 
@@ -67,7 +67,7 @@ def test_wong_scale_sensitivity_links_to_canonical_means():
   z=means[means.outcome==r.outcome].set_index('design'); assert r.D_A==pytest.approx(z.loc['Unrestricted ChatGPT','assisted_task_mean']-z.loc['Learner-first AI','assisted_task_mean']); assert r.D_I==pytest.approx(z.loc['Unrestricted ChatGPT','independent_task_mean']-z.loc['Learner-first AI','independent_task_mean'])
 
 def test_same_sign_never_auto_becomes_population_preservation(tmp_path):
- p=pd.DataFrame([{'program':'X','design':'A','supported_effect_std':1,'independent_effect_std':1},{'program':'X','design':'B','supported_effect_std':0,'independent_effect_std':0}]); src=tmp_path/'p.csv'; out=tmp_path/'o.csv'; p.to_csv(src,index=False); order.build(src,out); row=pd.read_csv(out).iloc[0]; assert row.pairwise_transport_status=='same_sign_observed'; assert 'population preservation requires direct inferential support' in row.interpretation
+ p=pd.DataFrame([{'program':'X','design':'A','supported_effect_std':1,'independent_effect_std':1},{'program':'X','design':'B','supported_effect_std':0,'independent_effect_std':0}]); src=tmp_path/'p.csv'; out=tmp_path/'o.csv'; p.to_csv(src,index=False); gate=tmp_path/'gate.csv'; pd.DataFrame([{'program':'X','rank_comparison_eligible':'yes','commensurability_status':'task_specific_directional_only','interpretive_boundary':'synthetic test scope'}]).to_csv(gate,index=False); order.build(src,out,gate); row=pd.read_csv(out).iloc[0]; assert row.pairwise_transport_status=='same_sign_observed'; assert 'population preservation requires direct inferential support' in row.interpretation
 
 def test_build_paired_profiles_root_is_repository_root(): assert profiles.ROOT==ROOT
 

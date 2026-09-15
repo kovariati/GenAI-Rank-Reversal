@@ -1,8 +1,10 @@
-# Generative AI, Performance, and Learning: Intervention Rank Reversal Across Assessment Regimes
+# Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
 
 Public code, results, and reproducibility repository for a manuscript on assessment-regime rank reversal in Generative AI evaluation.
 
 ## Canonical scientific claims
+- The contribution is a methodological framework and retrospective secondary analysis, not a new statistical method.
+- The focal Wong–Qiu result concerns task-specific expert-rated originality, not general creativity or durable learning.
 - AI-assisted performance alone does not establish independent human performance.
 - Rank preservation across assessment contexts cannot be inferred from randomization alone.
 - Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled.

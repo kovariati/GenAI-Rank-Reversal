@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from pathlib import Path
 import csv
-import hashlib
 import json
 import re
 import shutil
@@ -19,10 +18,6 @@ ROOT = Path(__file__).resolve().parents[1]
 def run(cmd, cwd=ROOT):
     print('+', ' '.join(map(str, cmd)))
     subprocess.run(cmd, cwd=cwd, check=True)
-
-
-def sha(p):
-    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
 def schema_people(xs):
@@ -209,7 +204,7 @@ with tempfile.TemporaryDirectory() as td:
         'CITATION.cff', 'CITATION.bib', 'CITATION.ris', 'codemeta.json',
         'ARTICLE_METADATA.json', 'llms.txt', 'REPOSITORY_DESCRIPTION.txt', 'GITHUB_TOPICS.txt'
     ]:
-        assert sha(t / name) == sha(ROOT / name), ('metadata generator drift', name)
+        assert (t / name).read_bytes() == (ROOT / name).read_bytes(), ('metadata generator drift', name)
 print('metadata_generator_idempotence: PASS')
 
 run([sys.executable, 'tools/validate_dependency_lock.py'])
@@ -221,13 +216,13 @@ run([sys.executable, 'code/validate_arrp_operational_rules.py'])
 
 # ARRP spec validator rewrites its audit outputs; preserve canonical bytes and require identical result after run.
 arrp_files = [ROOT / 'results/arrp_specification_audit.csv', ROOT / 'results/arrp_specification_audit_summary.json']
-before = {p.name: sha(p) for p in arrp_files}
+before = {p.name: p.read_bytes() for p in arrp_files}
 run([sys.executable, 'code/validate_arrp_specification.py'])
-after = {p.name: sha(p) for p in arrp_files}
+after = {p.name: p.read_bytes() for p in arrp_files}
 assert before == after, ('ARRP regenerated output differs', before, after)
 print('arrp_byte_identity: PASS')
 
-# Regenerate self-contained outputs in an isolated temp tree and compare content hashes.
+# Regenerate self-contained outputs in an isolated temp tree and compare their contents directly.
 with tempfile.TemporaryDirectory() as td:
     t = Path(td)
     (t / 'results').mkdir(); (t / 'code').mkdir()
@@ -236,17 +231,18 @@ with tempfile.TemporaryDirectory() as td:
     for name in ['analyze_wong_direct_reversal.py', 'assessment_regime_rank_robustness.py', 'assessment_regime_rank_sensitivity.py']:
         shutil.copy2(ROOT / 'code' / name, t / 'code' / name)
     run([sys.executable, 'code/analyze_wong_direct_reversal.py'], cwd=t)
+    run([sys.executable, 'code/analyze_wong_direct_reversal.py', '--outcomes', 'originality', 'usefulness', 'elaboration', '--output', 'results/wong_three_dimension_inference.csv', '--summary', 'results/wong_three_dimension_summary.csv'], cwd=t)
     run([sys.executable, 'code/assessment_regime_rank_robustness.py'], cwd=t)
     run([sys.executable, 'code/assessment_regime_rank_sensitivity.py', 'results/wong_rank_reversal_sensitivity_input.csv', 'results/wong_rank_reversal_sensitivity.csv'], cwd=t)
-    for name in ['wong_direct_reversal_inference.csv', 'wong_direct_reversal_summary.csv', 'wong_rank_robustness_region.csv', 'wong_rank_robustness_summary.csv', 'wong_rank_reversal_sensitivity.csv']:
-        assert sha(t / 'results' / name) == sha(ROOT / 'results' / name), name
+    for name in ['wong_direct_reversal_inference.csv', 'wong_direct_reversal_summary.csv', 'wong_three_dimension_inference.csv', 'wong_three_dimension_summary.csv', 'wong_rank_robustness_region.csv', 'wong_rank_robustness_summary.csv', 'wong_rank_reversal_sensitivity.csv']:
+        assert (t / 'results' / name).read_bytes() == (ROOT / 'results' / name).read_bytes(), name
 print('self_contained_regeneration: PASS')
 
 # Rebuild paired profiles and pairwise rank status from shipped derived results in a temp tree.
 with tempfile.TemporaryDirectory() as td:
     t = Path(td)
     (t / 'results').mkdir(); (t / 'code').mkdir()
-    deps = ['bastani_within_study_profile_contrast.csv', 'study_descriptives.csv', 'bassner_effects.csv', 'bassner_descriptives.csv', 'bassner_profile_bootstrap.csv', 'wong_participant_reanalysis.csv']
+    deps = ['construct_commensurability_audit.csv', 'bastani_within_study_profile_contrast.csv', 'study_descriptives.csv', 'bassner_effects.csv', 'bassner_descriptives.csv', 'bassner_profile_bootstrap.csv', 'wong_participant_reanalysis.csv']
     for name in deps:
         shutil.copy2(ROOT / 'results' / name, t / 'results' / name)
     for name in ['build_paired_profiles.py', 'assessment_regime_rank_order.py']:
@@ -255,7 +251,7 @@ with tempfile.TemporaryDirectory() as td:
     run([sys.executable, 'code/assessment_regime_rank_order.py'], cwd=t)
     for name in ['paired_supported_independent_profiles.csv', 'paired_profile_contrasts.csv', 'paired_profile_summary.json', 'pairwise_rank_transport_status.csv']:
         if name != 'pairwise_rank_transport_status.csv':
-            assert sha(t / 'results' / name) == sha(ROOT / 'results' / name), name
+            assert (t / 'results' / name).read_bytes() == (ROOT / 'results' / name).read_bytes(), name
 
     def rr(p):
         return {r['program']: r['pairwise_transport_status'] for r in csv.DictReader(Path(p).open(encoding='utf-8-sig'))}
@@ -265,11 +261,11 @@ print('paired_profile_regeneration: PASS')
 
 with tempfile.TemporaryDirectory() as td:
     t=Path(td); (t/'results').mkdir(); (t/'code').mkdir()
-    deps=['wong_direct_reversal_summary.csv','bastani_rank_evidence_summary.csv','bassner_descriptives.csv','bassner_effects.csv']
+    deps=['construct_commensurability_audit.csv','wong_direct_reversal_summary.csv','bastani_rank_evidence_summary.csv','bassner_descriptives.csv','bassner_effects.csv']
     for name in deps: shutil.copy2(ROOT/'results'/name,t/'results'/name)
     shutil.copy2(ROOT/'code/build_paired_rank_evidence.py',t/'code/build_paired_rank_evidence.py')
     run([sys.executable,'code/build_paired_rank_evidence.py','--results','results'],cwd=t)
-    assert sha(t/'results/paired_rank_evidence_revised.csv') == sha(ROOT/'results/paired_rank_evidence_revised.csv')
+    assert (t/'results/paired_rank_evidence_revised.csv').read_bytes() == (ROOT/'results/paired_rank_evidence_revised.csv').read_bytes()
 print('manuscript_facing_evidence_regeneration: PASS')
 
 run([sys.executable, 'tests/test_expected_results.py'])

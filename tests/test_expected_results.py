@@ -16,11 +16,12 @@ for r in s:
     check(r['outcome']+'_assisted_positive',float(r['assisted_estimate'])>0)
     check(r['outcome']+'_independent_negative',float(r['independent_estimate'])<0)
     check(r['outcome']+'_holm',abs(float(r['holm_adjusted_iut_p_across_outcomes'])-0.006755669718681242)<1e-12)
-# Exact Bassner manuscript-facing direct Welch interval
+    check(r['outcome']+'_orientation_safe_holm',abs(float(r['holm_adjusted_orientation_reversal_p'])-0.013511339437362484)<1e-12)
+# Bassner manuscript-facing Welch-Satterthwaite approximate interval
 e=rows('paired_rank_evidence_revised.csv')
 br=next(r for r in e if r['program']=='Bassner')
-check('Bassner_exact_Welch_low',abs(float(br['independent_ci_low'])-(-0.29486047502963264))<1e-12)
-check('Bassner_exact_Welch_high',abs(float(br['independent_ci_high'])-0.8328225129916709)<1e-12)
+check('Bassner_Welch_low',abs(float(br['independent_ci_low'])-(-0.29486047502963264))<1e-12)
+check('Bassner_Welch_high',abs(float(br['independent_ci_high'])-0.8328225129916709)<1e-12)
 wp=rows('wong_participant_reanalysis.csv'); wb=rows('wong_profile_interaction_bootstrap.csv')
 check('Wong_bootstrap_sign_tail_name','profile_change_bootstrap_sign_tail' in wp[0] and 'profile_change_bootstrap_p' not in wp[0])
 check('Wong_diff_sign_tail_name','diff_bootstrap_sign_tail' in wb[0] and 'diff_bootstrap_p' not in wb[0])
