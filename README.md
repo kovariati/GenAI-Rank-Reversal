@@ -1,8 +1,10 @@
 # Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
 
-Research software and results for the manuscript by Attila Kovari. The software version `1.0.0` remains a planned publication-linked version; a live release, article DOI, or acceptance is not claimed.
+Research software and results for the manuscript by Attila Kovari. **Final local manuscript revision: 14 September 2026.** The software version `1.0.0` remains a planned publication-linked version; a live release, article DOI, or acceptance is not claimed.
 
 Project repository: https://github.com/kovariati/GenAI-Rank-Reversal
+
+![Bounded methodological workflow](figures/graphical_abstract.png)
 
 ## Manuscript abstract
 
