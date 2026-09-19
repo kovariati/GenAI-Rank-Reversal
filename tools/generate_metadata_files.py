@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 M = json.loads((ROOT / 'PROJECT_METADATA.json').read_text(encoding='utf-8'))
 
 title = M['article_title']
+software_title = M.get('software_title', M['project_short_name'])
 year = int(M['article_year'])
 version = str(M['software_version'])
 authors = M['authors']
@@ -61,7 +62,7 @@ article_key = f'{first_family}{year}{project_key}'
 software_key = f'{article_key}Software'
 
 software_description = (
-    f"Code, results, and reproducibility snapshot for the manuscript '{title}'. "
+    f"Code, results, and reproducibility repository for the peer-reviewed article '{title}'. "
     "Third-party raw participant data are not redistributed."
 )
 
@@ -69,11 +70,10 @@ software_description = (
 cff = {
     'cff-version': '1.2.0',
     'message': (
-        'If the scientific method or findings contribute to your work, cite the associated '
-        'manuscript/article when appropriate; for direct software reuse, cite this software '
-        'release. Publication metadata are added only after they exist.'
+        'If the scientific method or findings contribute to your work, cite the associated peer-reviewed '
+        'article; for direct software reuse, also cite this software release.'
     ),
-    'title': title,
+    'title': software_title,
     'type': 'software',
     'authors': [person_cff(x) for x in authors],
     'version': version,
@@ -98,6 +98,13 @@ if M.get('journal'):
     preferred['journal'] = M['journal']
 if M.get('article_doi'):
     preferred['doi'] = M['article_doi']
+    preferred['url'] = 'https://doi.org/' + M['article_doi']
+if M.get('article_volume') is not None:
+    preferred['volume'] = str(M['article_volume'])
+if M.get('article_issue') is not None:
+    preferred['issue'] = str(M['article_issue'])
+if M.get('article_number') is not None:
+    preferred['start'] = str(M['article_number'])
 if not M.get('article_doi'):
     preferred['notes'] = 'Manuscript; journal and DOI metadata pending until an actual publication record exists.'
 cff['preferred-citation'] = preferred
@@ -116,8 +123,16 @@ if M.get('journal') or M.get('article_doi'):
     ]
     if M.get('journal'):
         fields.append(f"  journal = {{{M['journal']}}}")
+    if M.get('article_volume') is not None:
+        fields.append(f"  volume = {{{M['article_volume']}}}")
+    if M.get('article_issue') is not None:
+        fields.append(f"  number = {{{M['article_issue']}}}")
+    if M.get('article_number') is not None:
+        fields.append(f"  pages = {{{M['article_number']}}}")
     if M.get('article_doi'):
         fields.append(f"  doi = {{{M['article_doi']}}}")
+    if M.get('publisher_url'):
+        fields.append(f"  url = {{{M['publisher_url']}}}")
     article_record = '@article{' + article_key + ',\n' + ',\n'.join(fields) + '\n}\n'
 else:
     article_record = (
@@ -130,12 +145,14 @@ else:
     )
 software_fields = [
     f'  author = {{{author_field}}}',
-    f'  title = {{{title}}}',
+    f'  title = {{{software_title}}}',
     f'  version = {{{version}}}',
     f'  year = {{{year}}}',
-    '  note = {Code and reproducibility snapshot}',
+    '  note = {Code, results, and reproducibility software release}',
 ]
-if M.get('repository_url'):
+if M.get('release_url'):
+    software_fields.append(f"  url = {{{M['release_url']}}}")
+elif M.get('repository_url'):
     software_fields.append(f"  url = {{{M['repository_url']}}}")
 software_record = '@software{' + software_key + ',\n' + ',\n'.join(software_fields) + '\n}\n'
 (ROOT / 'CITATION.bib').write_text(article_record + '\n' + software_record, encoding='utf-8')
@@ -146,28 +163,39 @@ ris += ris_author_lines(authors)
 ris += [f'TI  - {title}', f'PY  - {year}']
 if M.get('journal'):
     ris.append('JO  - ' + M['journal'])
+if M.get('article_volume') is not None:
+    ris.append('VL  - ' + str(M['article_volume']))
+if M.get('article_issue') is not None:
+    ris.append('IS  - ' + str(M['article_issue']))
+if M.get('article_number') is not None:
+    ris.append('SP  - ' + str(M['article_number']))
 if M.get('article_doi'):
     ris.append('DO  - ' + M['article_doi'])
+if M.get('publisher_url'):
+    ris.append('UR  - ' + M['publisher_url'])
 else:
     ris.append('N1  - Manuscript; publication metadata pending')
 ris += ['ER  - ', '', 'TY  - COMP']
 ris += ris_author_lines(authors)
-ris += [f'TI  - {title}', f'PY  - {year}', f'ET  - {version}']
-if M.get('repository_url'):
+ris += [f'TI  - {software_title}', f'PY  - {year}', f'ET  - {version}']
+if M.get('release_url'):
+    ris.append('UR  - ' + M['release_url'])
+elif M.get('repository_url'):
     ris.append('UR  - ' + M['repository_url'])
-ris += ['N1  - Code and reproducibility snapshot', 'ER  - ', '']
+ris += ['N1  - Code, results, and reproducibility software release', 'ER  - ', '']
 (ROOT / 'CITATION.ris').write_text('\n'.join(ris), encoding='utf-8')
 
 # CodeMeta 3.1
 code = {
     '@context': 'https://w3id.org/codemeta/3.1',
     '@type': 'SoftwareSourceCode',
-    'name': title,
+    'name': software_title,
     'description': software_description,
     'version': version,
     'license': software_license_url,
     'author': [person_schema(x) for x in authors],
-    'programmingLanguage': ['Python'],
+    'maintainer': person_schema(authors[0]),
+    'programmingLanguage': 'Python',
     'runtimePlatform': f'Python {runtime_python}',
     'keywords': list(M['paper_keywords']),
     'citation': {
@@ -176,11 +204,12 @@ code = {
         'abstract': M['article_abstract'],
         'author': [person_schema(x) for x in authors],
         'keywords': list(M['paper_keywords']),
-        'description': 'Preferred scientific citation target; manuscript status until final publication metadata exist.',
+        'description': 'Preferred scientific citation target: peer-reviewed article.',
     },
 }
 if M.get('repository_url'):
     code['codeRepository'] = M['repository_url']
+    code['url'] = M['repository_url']
     code['issueTracker'] = M['repository_url'].rstrip('/') + '/issues'
 if M.get('release_url'):
     code['downloadUrl'] = M['release_url']
@@ -189,8 +218,21 @@ if M.get('release_date'):
     code['dateModified'] = M['release_date']
 if M.get('journal'):
     code['citation']['isPartOf'] = {'@type': 'Periodical', 'name': M['journal']}
+    code['citation']['publisher'] = {'@type': 'Organization', 'name': 'MDPI'}
 if M.get('article_doi'):
-    code['citation']['identifier'] = 'https://doi.org/' + M['article_doi']
+    code['citation']['identifier'] = M['article_doi']
+    code['citation']['sameAs'] = 'https://doi.org/' + M['article_doi']
+if M.get('article_volume') is not None:
+    code['citation']['volumeNumber'] = str(M['article_volume'])
+if M.get('article_issue') is not None:
+    code['citation']['issueNumber'] = str(M['article_issue'])
+if M.get('article_number') is not None:
+    code['citation']['pagination'] = str(M['article_number'])
+if M.get('publication_date'):
+    code['citation']['datePublished'] = M['publication_date']
+if M.get('publisher_url'):
+    code['citation']['url'] = M['publisher_url']
+code['citation']['creativeWorkStatus'] = 'Published' if M.get('article_status') == 'published' else M.get('article_status')
 (ROOT / 'codemeta.json').write_text(json.dumps(code, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
 
 # Article JSON-LD
@@ -206,7 +248,16 @@ article = {
     'keywords': list(M['paper_keywords']),
 }
 if M.get('journal'):
-    article['isPartOf'] = {'@type': 'Periodical', 'name': M['journal']}
+    issue = {'@type': 'PublicationIssue', 'issueNumber': str(M['article_issue'])} if M.get('article_issue') is not None else {'@type': 'PublicationIssue'}
+    volume = {'@type': 'PublicationVolume', 'name': M['journal']}
+    if M.get('article_volume') is not None:
+        volume['volumeNumber'] = str(M['article_volume'])
+    issue['isPartOf'] = volume
+    article['isPartOf'] = issue
+if M.get('article_number') is not None:
+    article['pagination'] = str(M['article_number'])
+if M.get('publication_date'):
+    article['datePublished'] = M['publication_date']
 if M.get('article_doi'):
     article['identifier'] = 'https://doi.org/' + M['article_doi']
 if M.get('publisher_url'):
@@ -223,16 +274,16 @@ if M.get('article_doi'):
     links.append('- Article DOI: https://doi.org/' + M['article_doi'])
 llm = (
     f'# {title}\n\n'
-    'Public code, results, and reproducibility repository for a manuscript on assessment-regime rank reversal in Generative AI evaluation.\n\n'
+    'Public code, results, and reproducibility repository for the peer-reviewed article in Computers on assessment-regime comparison of Generative AI interventions.\n\n'
     '## Canonical scientific claims\n'
     + ''.join(f'- {x}\n' for x in M['canonical_claims'])
     + '\n## Key concepts\n'
     + ''.join(f'- {x}\n' for x in M['related_search_terms'])
     + '\n## Reusable object\n- ARRP (Assessment-Regime Reporting Profile): docs/ARRP.md and arrp.schema.json\n'
     + '\n## Citation\n'
-    'The associated manuscript/article is the scientific citation target for the method and findings. '
-    'Publication metadata are intentionally omitted until they exist. Direct software reuse should also '
-    f'cite the software release and follow the {software_license} License.\n\n'
+    'The peer-reviewed journal article is the preferred scientific citation target for the method and findings. '
+    'Direct software reuse should also cite the v1.0.0 software release and follow the '
+    f'{software_license} License.\n\n'
     '## Links\n'
     + ('\n'.join(links) if links else '- External canonical links pending actual repository/publication creation.')
     + '\n'

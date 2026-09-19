@@ -1,6 +1,6 @@
 # Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
 
-Public code, results, and reproducibility repository for a manuscript on assessment-regime rank reversal in Generative AI evaluation.
+Public code, results, and reproducibility repository for the peer-reviewed article in Computers on assessment-regime comparison of Generative AI interventions.
 
 ## Canonical scientific claims
 - The contribution is a methodological framework and retrospective secondary analysis, not a new statistical method.
@@ -42,7 +42,9 @@ Public code, results, and reproducibility repository for a manuscript on assessm
 - ARRP (Assessment-Regime Reporting Profile): docs/ARRP.md and arrp.schema.json
 
 ## Citation
-The associated manuscript/article is the scientific citation target for the method and findings. Publication metadata are intentionally omitted until they exist. Direct software reuse should also cite the software release and follow the MIT License.
+The peer-reviewed journal article is the preferred scientific citation target for the method and findings. Direct software reuse should also cite the v1.0.0 software release and follow the MIT License.
 
 ## Links
 - Repository: https://github.com/kovariati/GenAI-Rank-Reversal
+- Release: https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
+- Article DOI: https://doi.org/10.3390/computers15090633

@@ -8,7 +8,7 @@ This public repository separates project-authored derived research artifacts fro
 
 - public analysis and validation code in `code/`;
 - small canonical derived outputs in `results/`;
-- manuscript-facing figures in `figures/`;
+- article-facing figures in `figures/`;
 - ARRP coding tables, construct-commensurability audit, evidence-map metadata and public provenance;
 - environment locks, tests and validation tools.
 
@@ -41,6 +41,8 @@ python tools/validate_repository.py
 
 Deeper participant-level and public-study regeneration instructions are in `README_RUNNING.md` and `REPRODUCTION_LEVELS.md`.
 
-## Persistent links and release timing
+## Persistent links and release identity
 
-The canonical repository URL is `https://github.com/kovariati/GenAI-Rank-Reversal`. The version-specific release URL, release date, and final article DOI remain intentionally unset until those objects actually exist. After the article has a definitive bibliographic record and the `v1.0.0` release is created, update the canonical metadata, regenerate derived metadata files, and re-run the repository validator.
+The canonical repository is `https://github.com/kovariati/GenAI-Rank-Reversal`. The publication-linked software release is `https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0` and the peer-reviewed article DOI is `https://doi.org/10.3390/computers15090633`. The publisher article is `https://www.mdpi.com/2073-431X/15/9/633`.
+
+The `v1.0.0` release includes `GenAI_Rank_Reversal_results_v1.0.0.zip`, a convenience archive of the canonical `results/` directory. No custom checksum/hash manifest is distributed.

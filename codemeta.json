@@ -1,8 +1,8 @@
 {
   "@context": "https://w3id.org/codemeta/3.1",
   "@type": "SoftwareSourceCode",
-  "name": "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes",
-  "description": "Code, results, and reproducibility snapshot for the manuscript 'Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes'. Third-party raw participant data are not redistributed.",
+  "name": "GenAI-Rank-Reversal Research Software",
+  "description": "Code, results, and reproducibility repository for the peer-reviewed article 'Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes'. Third-party raw participant data are not redistributed.",
   "version": "1.0.0",
   "license": "https://spdx.org/licenses/MIT.html",
   "author": [
@@ -13,9 +13,13 @@
       "@id": "https://orcid.org/0000-0003-3521-4757"
     }
   ],
-  "programmingLanguage": [
-    "Python"
-  ],
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Attila",
+    "familyName": "Kovari",
+    "@id": "https://orcid.org/0000-0003-3521-4757"
+  },
+  "programmingLanguage": "Python",
   "runtimePlatform": "Python 3.13.5",
   "keywords": [
     "generative artificial intelligence",
@@ -53,8 +57,28 @@
       "evidence synthesis",
       "reporting framework"
     ],
-    "description": "Preferred scientific citation target; manuscript status until final publication metadata exist."
+    "description": "Preferred scientific citation target: peer-reviewed article.",
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": "Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MDPI"
+    },
+    "identifier": "10.3390/computers15090633",
+    "sameAs": "https://doi.org/10.3390/computers15090633",
+    "volumeNumber": "15",
+    "issueNumber": "9",
+    "pagination": "633",
+    "datePublished": "2026-09-19",
+    "url": "https://www.mdpi.com/2073-431X/15/9/633",
+    "creativeWorkStatus": "Published"
   },
   "codeRepository": "https://github.com/kovariati/GenAI-Rank-Reversal",
-  "issueTracker": "https://github.com/kovariati/GenAI-Rank-Reversal/issues"
+  "url": "https://github.com/kovariati/GenAI-Rank-Reversal",
+  "issueTracker": "https://github.com/kovariati/GenAI-Rank-Reversal/issues",
+  "downloadUrl": "https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0",
+  "datePublished": "2026-09-19",
+  "dateModified": "2026-09-19"
 }

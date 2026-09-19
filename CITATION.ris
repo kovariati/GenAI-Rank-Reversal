@@ -1,15 +1,20 @@
-TY  - UNPB
+TY  - JOUR
 AU  - Kovari, Attila
 TI  - Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
 PY  - 2026
-N1  - Manuscript; publication metadata pending
+JO  - Computers
+VL  - 15
+IS  - 9
+SP  - 633
+DO  - 10.3390/computers15090633
+UR  - https://www.mdpi.com/2073-431X/15/9/633
 ER  - 
 
 TY  - COMP
 AU  - Kovari, Attila
-TI  - Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
+TI  - GenAI-Rank-Reversal Research Software
 PY  - 2026
 ET  - 1.0.0
-UR  - https://github.com/kovariati/GenAI-Rank-Reversal
-N1  - Code and reproducibility snapshot
+UR  - https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
+N1  - Code, results, and reproducibility software release
 ER  - 

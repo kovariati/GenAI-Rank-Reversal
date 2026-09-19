@@ -1,25 +1,27 @@
-> **Revision scope (2026-09-14).** Current focal inference is task-specific originality with orientation-plus-Holm p=0.01351; usefulness is secondary. No fresh raw-source participant rerun is claimed. Complete Bassner/Cicek/Zhou raw-to-result pipelines are not supplied. Prior raw-analysis descriptions below document archived provenance, not newly executed validation. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
+# Release provenance — v1.0.0
 
-# DRAFT RELEASE TEMPLATE — provenance
+Publication-linked release date: **19 September 2026**.
 
-No `v1.0.0` release is live yet. This document describes the **planned publication-linked v1.0.0 release** associated with the manuscript identity in `PROJECT_METADATA.json`.
+The public repository tree was rebuilt from the finalized analysis state rather than copied wholesale from the development workspace. Development/review history, local paths, caches, submission-system artifacts, credentials, and third-party raw data are excluded.
 
-The public tree was rebuilt from the finalized analysis state rather than copied wholesale from the development workspace. Development/review history, internal revision labels, local paths, caches, non-finalized surveillance notes, submission-system artifacts, and third-party raw data were excluded.
+The **Git tag `v1.0.0`** identifies the article-associated source-code and reproducibility state. GitHub automatically provides `Source code (zip)` and `Source code (tar.gz)` for that tag.
 
-Once created after final publication metadata are available, the **Git tag `v1.0.0` will be the canonical article-associated source-code and reproducibility snapshot**. GitHub automatically provides `Source code (zip)` and `Source code (tar.gz)` for that tag. A separate full-repository reproducibility archive is intentionally not published because it would duplicate the tagged repository.
+The only custom release asset is:
 
-The only custom scientific bundle is:
+- `GenAI_Rank_Reversal_results_v1.0.0.zip`
 
-- `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`
+The asset contains the canonical `results/` directory. It does not redistribute third-party raw participant data and does not include a checksum/hash manifest.
 
-The bundle contains canonical derived results, manuscript-facing figures, ARRP schema/example, public provenance summaries, and release-validation material. It does not contain third-party raw participant data.
+The scientific headline values are checked by the standalone expected-results validator, full repository validator, deterministic regeneration steps, and the pytest mathematical/algorithmic regression suite.
 
-Scientific headline values are retained and checked by the standalone expected-results validator, the full repository validator, and a genuine pytest mathematical/algorithmic regression suite.
-
-Canonical repository:
+Canonical repository:  
 https://github.com/kovariati/GenAI-Rank-Reversal
 
-Planned release URL (not live until the release is created):
-[release URL to be added only after the final v1.0.0 release is published]
+Release:  
+https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
 
-Journal, DOI, and publisher metadata remain intentionally absent until those objects actually exist.
+Article DOI:  
+https://doi.org/10.3390/computers15090633
+
+Publisher article:  
+https://www.mdpi.com/2073-431X/15/9/633

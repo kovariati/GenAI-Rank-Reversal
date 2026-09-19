@@ -77,5 +77,5 @@ def test_wong_bootstrap_fields_are_sign_tail_not_p_values():
 def test_no_stale_figure4_bastani_artifact_name():
  text=(CODE/'reproduce_public_studies.py').read_text(); assert 'figure4_bastani_design_profile' not in text; assert 'bastani_design_profile_diagnostic' in text
 
-def test_release_docs_are_draft_before_live_release():
- m=json.loads((ROOT/'PROJECT_METADATA.json').read_text()); assert m.get('release_url') is None and m.get('release_date') is None; notes=(ROOT/'RELEASE_NOTES_v1.0.0.md').read_text(); prov=(ROOT/'docs/RELEASE_PROVENANCE.md').read_text(); assert 'DRAFT RELEASE TEMPLATE' in notes and 'DRAFT RELEASE TEMPLATE' in prov; assert 'planned publication-linked v1.0.0 release' in notes.lower()
+def test_publication_release_metadata_is_live_and_consistent():
+ m=json.loads((ROOT/'PROJECT_METADATA.json').read_text()); assert m.get('release_url')=='https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0'; assert m.get('release_date')=='2026-09-19'; assert m.get('article_doi')=='10.3390/computers15090633'; notes=(ROOT/'RELEASE_NOTES_v1.0.0.md').read_text(); prov=(ROOT/'docs/RELEASE_PROVENANCE.md').read_text(); assert 'DRAFT RELEASE TEMPLATE' not in notes and 'DRAFT RELEASE TEMPLATE' not in prov; assert m['release_url'] in notes and m['release_url'] in prov

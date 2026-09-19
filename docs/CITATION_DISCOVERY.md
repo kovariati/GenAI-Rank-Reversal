@@ -1,9 +1,20 @@
-# Citation and discovery policy
+# Citation and discovery metadata
 
-The repository is designed as a scholarly landing page, citation funnel and reproducibility object. Discovery metadata are redundant across CFF, BibTeX, RIS, CodeMeta, JSON-LD and `llms.txt`, but `PROJECT_METADATA.json` is the single authoring source. The GitHub About description and topic list are generated from the same source and checked semantically across surfaces.
+`PROJECT_METADATA.json` is the canonical source for identity-bearing metadata. The publication record is synchronized to:
 
-Before publication, machine-readable metadata identify the article as a manuscript and do not invent a journal, DOI or publisher URL. After publication, update `PROJECT_METADATA.json` once and run `python tools/generate_metadata_files.py`; then audit all metadata with `python tools/validate_repository.py`.
+**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Computers, 15(9), 633.** https://doi.org/10.3390/computers15090633
 
-`llms.txt` is supplementary machine-readable context only. It is not claimed to guarantee search-engine ranking, LLM retrieval or citations.
+Run `python tools/generate_metadata_files.py` after any intentional identity/metadata update. The generator produces:
 
-ARRP is exposed as a reusable research object through `docs/ARRP.md`, `arrp.schema.json`, a worked machine-readable example and executable validators. This creates a separate reuse path without claiming that ARRP is an externally validated standard.
+- `CITATION.cff`
+- `CITATION.bib`
+- `CITATION.ris`
+- `codemeta.json`
+- `ARTICLE_METADATA.json`
+- `llms.txt`
+- `REPOSITORY_DESCRIPTION.txt`
+- `GITHUB_TOPICS.txt`
+
+Then run `python tools/validate_repository.py` to verify semantic and byte-level cross-file consistency.
+
+`llms.txt` is supplementary machine-readable context only. It is not claimed to guarantee search-engine ranking, LLM retrieval, or citations.

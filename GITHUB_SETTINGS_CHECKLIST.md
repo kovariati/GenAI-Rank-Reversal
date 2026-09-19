@@ -2,37 +2,47 @@
 
 ## Repository identity
 
-- **Suggested repository name:** `GenAI-Rank-Reversal`
-- **About description (338 characters; GitHub currently allows up to 350):**
-  `Generative AI and large language models: intervention rank reversal across AI-assisted and independent assessment regimes. Code, results, and reproducibility for human–AI collaboration, independent human performance, learning transfer, assessment validity, causal inference, qualitative interaction, meta-analysis, and evidence synthesis.`
-- **Website:** leave blank until a real canonical article DOI/publisher page exists; after publication, prefer the canonical DOI URL.
+- **Repository name:** `GenAI-Rank-Reversal`
+- **About description:**  
+  `Code and results for "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes". Computers 15(9), 633 (2026). DOI: 10.3390/computers15090633`
+- **Website:** `https://doi.org/10.3390/computers15090633`
 - **Repository:** https://github.com/kovariati/GenAI-Rank-Reversal
-- **Planned publication-linked release (not live during peer review):** https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
+- **Release:** https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
 - **Default branch:** `main`
 
 ## Topics (20)
 
 `generative-ai`, `large-language-models`, `human-ai-collaboration`, `ai-assisted-performance`, `independent-human-performance`, `learning-transfer`, `assessment-validity`, `causal-inference`, `causal-transportability`, `treatment-effect-heterogeneity`, `qualitative-interaction`, `rank-reversal`, `assessment-regimes`, `meta-analysis`, `evidence-synthesis`, `human-computer-interaction`, `ai-education`, `research-methods`, `reproducible-research`, `research-software`
 
-The GitHub topics intentionally favor high precision. Broader cross-domain terms such as software engineering, workplace productivity and clinical decision support remain in README/search metadata rather than being asserted as primary repository topics.
-
 ## Social preview
 
+Upload `assets/GenAI-Rank-Reversal_social_preview.png` in **Settings → General → Social preview**. The file is 1280×640 pixels and is a repository identity image, not a manuscript graphical abstract.
 
-## CI / trust signal
+## Release v1.0.0
 
-After the first `repository-quality` workflow has passed on the live repository, add the live GitHub Actions status badge to the README badge row. Do not show a passing badge before a real workflow run exists.
+Create a release from tag **`v1.0.0`** and use:
+
+- **Release title:** `GenAI-Rank-Reversal v1.0.0`
+- **Release notes:** contents of `RELEASE_NOTES_v1.0.0.md`
+- **Custom asset:** `GenAI_Rank_Reversal_results_v1.0.0.zip`
+- Keep GitHub's automatically generated `Source code (zip)` and `Source code (tar.gz)`.
+- Do **not** upload a checksum/hash sidecar or SHA manifest.
+- Do **not** enable immutable releases for this repository.
+- Do **not** enable Zenodo integration unless a later explicit archival decision is made.
 
 ## Recommended repository settings
 
-- Enable Issues if reproducibility support will be provided.
-- Enable secret scanning / push protection where available.
-- Enable dependency security alerts where available.
-- Keep Actions enabled for `.github/workflows/repository-quality.yml`.
-- After the article has a definitive bibliographic record, create the `v1.0.0` release; upload only `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`. The `v1.0.0` Git tag is the canonical source/reproducibility snapshot; do not upload duplicate full-repository or provenance ZIPs that merely repeat files already versioned in Git.
-- If immutable releases are available, enable immutability only after the draft release has passed final asset QA.
-- Do not enable Zenodo integration for this project unless a later explicit archival decision is made.
+- Enable **Issues** for reproducibility support.
+- Keep **Actions** enabled for `.github/workflows/repository-quality.yml`.
+- Enable secret scanning/push protection and dependency security alerts where available.
+- After the first successful repository-quality workflow, add the real live Actions badge to the README if desired.
+- Keep the repository public.
 
-## Publication-day update
+## Publication identity
 
-After a real journal record exists, edit only `PROJECT_METADATA.json` (`journal`, `article_doi`, `publisher_url`), run `python tools/generate_metadata_files.py`, then `python tools/validate_repository.py`. After creating the live release, add the actual `release_url` and `release_date` to `PROJECT_METADATA.json`, regenerate metadata, and rerun the validator.
+- **Journal:** Computers
+- **Volume / issue / article:** 15(9), 633
+- **Published:** 19 September 2026
+- **DOI:** `10.3390/computers15090633`
+- **Publisher:** https://www.mdpi.com/2073-431X/15/9/633
+- **ORCID:** https://orcid.org/0000-0003-3521-4757

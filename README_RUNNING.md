@@ -72,6 +72,6 @@ python code/analyze_wong_direct_reversal.py --outcomes originality usefulness el
 
 The existing two-outcome family is retained for the focal report. Complete Bassner/Cicek/Zhou raw pipelines are not supplied; raw-source reproduction cannot be obtained merely by running the general public-study script.
 
-## Revised manuscript-facing figures
+## Article-facing figures
 
 After the summary-statistic outputs exist, run `python tools/build_revision_figures.py`. It regenerates the two task-specific originality contrasts and the fixed-point weight/scale illustration. An optional `--manuscript-dir PATH` copies the two analytical PNGs into the LaTeX project. No participant input is required.

@@ -1,6 +1,6 @@
 # Seven-synthesis reporting-schema audit
 
-The manuscript reports only the bounded headline result. The complete audit is retained here in machine-readable form.
+The peer-reviewed article reports only the bounded headline result. The complete audit is retained here in machine-readable form.
 
 ## Frozen inclusion rule
 

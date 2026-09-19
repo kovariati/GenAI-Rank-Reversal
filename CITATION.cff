@@ -1,13 +1,13 @@
 cff-version: 1.2.0
-message: If the scientific method or findings contribute to your work, cite the associated manuscript/article when appropriate; for direct software reuse, cite this software release. Publication metadata are added only after they exist.
-title: 'Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes'
+message: If the scientific method or findings contribute to your work, cite the associated peer-reviewed article; for direct software reuse, also cite this software release.
+title: GenAI-Rank-Reversal Research Software
 type: software
 authors:
 - family-names: Kovari
   given-names: Attila
   orcid: https://orcid.org/0000-0003-3521-4757
 version: 1.0.0
-abstract: 'Code, results, and reproducibility snapshot for the manuscript ''Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes''. Third-party raw participant data are not redistributed.'
+abstract: 'Code, results, and reproducibility repository for the peer-reviewed article ''Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes''. Third-party raw participant data are not redistributed.'
 keywords:
 - generative artificial intelligence
 - large language models
@@ -20,6 +20,7 @@ keywords:
 - evidence synthesis
 - reporting framework
 license: MIT
+date-released: '2026-09-19'
 repository-code: https://github.com/kovariati/GenAI-Rank-Reversal
 preferred-citation:
   type: article
@@ -42,4 +43,9 @@ preferred-citation:
   - rank reversal
   - evidence synthesis
   - reporting framework
-  notes: Manuscript; journal and DOI metadata pending until an actual publication record exists.
+  journal: Computers
+  doi: 10.3390/computers15090633
+  url: https://doi.org/10.3390/computers15090633
+  volume: '15'
+  issue: '9'
+  start: '633'

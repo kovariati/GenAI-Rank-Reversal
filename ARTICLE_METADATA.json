@@ -13,7 +13,7 @@
     }
   ],
   "dateCreated": "2026",
-  "creativeWorkStatus": "manuscript",
+  "creativeWorkStatus": "published",
   "keywords": [
     "generative artificial intelligence",
     "large language models",
@@ -25,5 +25,18 @@
     "rank reversal",
     "evidence synthesis",
     "reporting framework"
-  ]
+  ],
+  "isPartOf": {
+    "@type": "PublicationIssue",
+    "issueNumber": "9",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Computers",
+      "volumeNumber": "15"
+    }
+  },
+  "pagination": "633",
+  "datePublished": "2026-09-19",
+  "identifier": "https://doi.org/10.3390/computers15090633",
+  "url": "https://www.mdpi.com/2073-431X/15/9/633"
 }

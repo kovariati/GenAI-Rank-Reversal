@@ -1,1 +1,1 @@
-Task-specific GenAI intervention ordering: methodological framework, corrected secondary analysis of originality ratings, reproducible summary-statistic inference, reporting schema, tests, and explicit raw-data reproduction limits.
+Code and results for "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes". Computers 15(9), 633 (2026). DOI: 10.3390/computers15090633

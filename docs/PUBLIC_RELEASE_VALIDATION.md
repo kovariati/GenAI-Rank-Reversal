@@ -1,27 +1,27 @@
 > **Revision scope (2026-09-14).** Current focal inference is task-specific originality with orientation-plus-Holm p=0.01351; usefulness is secondary. No fresh raw-source participant rerun is claimed. Complete Bassner/Cicek/Zhou raw-to-result pipelines are not supplied. Prior raw-analysis descriptions below document archived provenance, not newly executed validation. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
 
-# Public repository / release-candidate validation — planned v1.0.0
+# Public repository validation — v1.0.0 publication release
 
-Status: **PASS** for the audited peer-review repository state and prepared publication-linked release candidate. No `v1.0.0` GitHub Release is claimed to be live during peer review.
+Status: **PASS** for the audited publication-linked `v1.0.0` repository state associated with the peer-reviewed article in *Computers*, 15(9), 633 (2026).
 
-The public tree was rebuilt from the finalized analysis state rather than copied wholesale from a development workspace. The validation gate verifies scientific identity, discovery metadata, public hygiene, construct commensurability, ARRP specification conformance, self-contained regeneration, manuscript-facing paired evidence, and the distinction between descriptive sign patterns and population-ranking claims.
+The public tree was rebuilt from the finalized analysis state rather than copied wholesale from a development workspace. The validation gate verifies scientific identity, discovery metadata, public hygiene, construct commensurability, ARRP specification conformance, self-contained regeneration, article-facing paired evidence, and the distinction between descriptive sign patterns and population-ranking claims.
 
 ## Validation summary
 
 - metadata identity and semantic consistency: **PASS**
 - dependency lock: **PASS**
 - public hygiene: **PASS**
-- pre-publication release policy: **PASS**
+- publication release metadata policy: **PASS**
 - construct commensurability: **9/9 PASS**
 - ARRP operational rules: **12/12 PASS**
 - ARRP deterministic specification: **62/62 PASS**
-- manuscript-facing ARRP value/schema consistency: **PASS**
+- article-facing ARRP value/schema consistency: **PASS**
 - executable ARRP cases: **20/20 PASS**
 - metamorphic pairs: **10/10 PASS**
 - worked records checked: **77**
 - self-contained numerical regeneration: **PASS**
 - paired-profile regeneration: **PASS**
-- manuscript-facing paired-evidence regeneration: **PASS**
+- article-facing paired-evidence regeneration: **PASS**
 - canonical Figure 1 SVG/PDF/PNG asset synchronization: **PASS**
 - expected scientific results: **PASS**
 - genuine mathematical/algorithmic pytest regression suite: **56/56 PASS**

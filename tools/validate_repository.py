@@ -61,7 +61,8 @@ ris = (ROOT / 'CITATION.ris').read_text(encoding='utf-8')
 llms = (ROOT / 'llms.txt').read_text(encoding='utf-8')
 
 # Identity and abstract.
-assert C['title'] == M['article_title'] == CM['name'] == AM['name']
+assert C['title'] == M['software_title'] == CM['name']
+assert AM['name'] == M['article_title']
 assert C['preferred-citation']['title'] == M['article_title'] == CM['citation']['name']
 assert C['preferred-citation']['abstract'] == M['article_abstract'] == CM['citation']['abstract'] == AM['abstract']
 assert M['article_title'] in readme
@@ -87,6 +88,9 @@ expected_ris_authors = [f"{x['family_names']}, {x['given_names']}" for x in M['a
 rr = ris_authors(ris)
 assert len(rr) == 2 and all(x == expected_ris_authors for x in rr), rr
 assert f'ET  - {M["software_version"]}' in ris
+assert M['software_title'] in bib and M['software_title'] in ris
+if M.get('release_url'):
+    assert M['release_url'] in bib and M['release_url'] in ris
 assert M['article_title'] in bib and M['article_title'] in ris and M['article_title'] in llms
 for claim in M['canonical_claims']:
     assert claim in llms and claim in readme
@@ -99,21 +103,36 @@ assert '<DOI>' not in readme and '10.0000/' not in readme
 if M.get('repository_url'):
     assert C.get('repository-code') == M['repository_url']
     assert CM.get('codeRepository') == M['repository_url']
-    assert M['repository_url'] in bib and M['repository_url'] in ris and M['repository_url'] in llms
+    assert M['repository_url'] in llms
 else:
     assert 'repository-code' not in C and 'codeRepository' not in CM
 if M.get('article_doi'):
     assert C['preferred-citation'].get('doi') == M['article_doi']
-    assert CM['citation'].get('identifier') == 'https://doi.org/' + M['article_doi']
+    assert CM['citation'].get('identifier') == M['article_doi']
+    assert CM['citation'].get('sameAs') == 'https://doi.org/' + M['article_doi']
     assert AM.get('identifier') == 'https://doi.org/' + M['article_doi']
 else:
     assert 'doi' not in C['preferred-citation'] and 'identifier' not in CM['citation'] and 'identifier' not in AM
 if M.get('journal'):
     assert C['preferred-citation'].get('journal') == M['journal']
     assert CM['citation']['isPartOf']['name'] == M['journal']
-    assert AM['isPartOf']['name'] == M['journal']
+    assert AM['isPartOf']['isPartOf']['name'] == M['journal']
 else:
     assert 'journal' not in C['preferred-citation'] and 'isPartOf' not in CM['citation'] and 'isPartOf' not in AM
+if M.get('article_volume') is not None:
+    assert str(C['preferred-citation'].get('volume')) == str(M['article_volume'])
+    assert str(CM['citation'].get('volumeNumber')) == str(M['article_volume'])
+    assert str(AM['isPartOf']['isPartOf'].get('volumeNumber')) == str(M['article_volume'])
+if M.get('article_issue') is not None:
+    assert str(C['preferred-citation'].get('issue')) == str(M['article_issue'])
+    assert str(CM['citation'].get('issueNumber')) == str(M['article_issue'])
+    assert str(AM['isPartOf'].get('issueNumber')) == str(M['article_issue'])
+if M.get('article_number') is not None:
+    assert str(C['preferred-citation'].get('start')) == str(M['article_number'])
+    assert str(CM['citation'].get('pagination')) == str(M['article_number'])
+    assert str(AM.get('pagination')) == str(M['article_number'])
+if M.get('publication_date'):
+    assert AM.get('datePublished') == M['publication_date']
 if M.get('release_url'):
     assert CM.get('downloadUrl') == M['release_url']
     assert M['release_url'] in llms and M['release_url'] in readme
@@ -141,29 +160,31 @@ print(f'github_discovery_surfaces: PASS (About={len(about)} chars; topics={len(t
 # Release-asset policy: the tagged repository is the canonical source snapshot.
 release_notes = (ROOT / 'RELEASE_NOTES_v1.0.0.md').read_text(encoding='utf-8')
 release_builder = (ROOT / 'tools/build_release_assets.py').read_text(encoding='utf-8')
-for obsolete in ('REPRODUCIBILITY.zip', 'PROVENANCE.zip', 'FINAL_ANALYSIS.zip'):
-    assert obsolete not in release_notes, obsolete
-    assert obsolete not in release_builder, obsolete
-assert 'results-and-artifacts.zip' in release_notes
-assert 'results-and-artifacts.zip' in release_builder
+asset = M.get('release_asset')
+assert asset and asset.endswith('.zip')
+assert asset in release_notes and asset in release_builder
 assert 'Source code (zip)' in release_notes
 assert 'Source code (tar.gz)' in release_notes
-if M.get('release_url') is None:
-    assert 'DRAFT RELEASE TEMPLATE' in release_notes
-    assert 'planned publication-linked v1.0.0 release' in release_notes.lower()
-    prov=(ROOT/'docs/RELEASE_PROVENANCE.md').read_text(encoding='utf-8')
-    assert 'DRAFT RELEASE TEMPLATE' in prov and 'planned publication-linked v1.0.0 release' in prov.lower()
+assert 'results/' in release_builder
+assert 'checksum' in release_notes.lower() and 'no custom checksum' in release_notes.lower()
+assert 'immutable' in release_notes.lower() and 'not' in release_notes.lower()
+assert M.get('release_url') and M.get('release_date')
+assert M['release_url'] in release_notes and M['article_doi'] in release_notes
+prov=(ROOT/'docs/RELEASE_PROVENANCE.md').read_text(encoding='utf-8')
+assert asset in prov and M['release_url'] in prov and M['article_doi'] in prov
 print('release_asset_policy: PASS')
 
+# Publication-linked metadata must be fully synchronized.
+assert M.get('article_status') == 'published'
+assert M.get('journal') == 'Computers'
+assert M.get('article_doi') == '10.3390/computers15090633'
+assert M.get('publisher_url') == 'https://www.mdpi.com/2073-431X/15/9/633'
+assert M.get('publication_date') == '2026-09-19'
+assert M.get('release_url') == 'https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0'
+assert 'DRAFT RELEASE TEMPLATE' not in release_notes
+assert 'planned publication-linked' not in release_notes.lower()
+print('publication_release_policy: PASS')
 
-# Pre-publication release policy: do not claim a live version-specific release or repository DOI before they exist.
-if M.get('release_url') is None:
-    public_text = '\n'.join((ROOT / name).read_text(encoding='utf-8') for name in [
-        'README.md', 'DATA_AVAILABILITY.md', 'RELEASE_NOTES_v1.0.0.md', 'docs/RELEASE_PROVENANCE.md'
-    ])
-    assert '/releases/tag/v1.0.0' not in public_text
-    assert 'repository doi: 10.' not in public_text.lower()
-print('prepublication_release_policy: PASS')
 
 # ARRP machine-readable values and manuscript-facing reporting surface must stay semantically aligned.
 schema = json.loads((ROOT / 'arrp.schema.json').read_text(encoding='utf-8'))

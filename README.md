@@ -1,88 +1,154 @@
 # Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes
 
-Research software and results for the manuscript by Attila Kovari. **Final local manuscript revision: 14 September 2026.** The software version `1.0.0` remains a planned publication-linked version; a live release, article DOI, or acceptance is not claimed.
+[![DOI](https://img.shields.io/badge/DOI-10.3390%2Fcomputers15090633-blue)](https://doi.org/10.3390/computers15090633)
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue)](https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Project repository: https://github.com/kovariati/GenAI-Rank-Reversal
+Official code, results, and reproducibility repository for the peer-reviewed article:
 
-## Manuscript abstract
+**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Computers, 15(9), 633.** https://doi.org/10.3390/computers15090633
 
-Generative artificial intelligence (AI) and large language models can improve assisted task performance without establishing learning, retention, or transfer. Evaluating AI in education and human–AI collaboration therefore requires distinguishing assisted from independent human performance. A methodological framework separates target constructs, tasks, assessment conditions, and verification evidence to examine when intervention rankings can be compared across assessment regimes. A retrospective secondary analysis uses established statistical procedures to reassess a previously reported comparison of unrestricted and learner-first ChatGPT use. Published rounded summary statistics indicate a task-specific rank reversal in expert-rated originality: unrestricted-minus-learner-first contrasts are +0.78 points for a stuffed-bunny improvement task and −0.73 for a subsequent vocabulary-game task under a no-AI protocol (two-orientation testing; Holm-adjusted p = 0.01351 across originality and usefulness). Usefulness provides secondary corroboration; reversal is not supported for elaboration. These findings concern task-specific product ratings, not general creativity or durable learning. Task content, sequence, and AI-access policy vary together, precluding attribution to AI removal alone. The Assessment-Regime Reporting Profile supports reporting checks but lacks independent validation. The contribution is an auditable workflow for assessment validity and evidence synthesis: intervention comparisons require explicit outcome definitions and defensible comparability assumptions before findings are pooled or generalized.
+- **Canonical DOI:** https://doi.org/10.3390/computers15090633
+- **Publisher article:** https://www.mdpi.com/2073-431X/15/9/633
+- **Canonical repository:** https://github.com/kovariati/GenAI-Rank-Reversal
+- **Canonical software release:** https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
+- **Results asset:** https://github.com/kovariati/GenAI-Rank-Reversal/releases/download/v1.0.0/GenAI_Rank_Reversal_results_v1.0.0.zip
+- **Author ORCID:** https://orcid.org/0000-0003-3521-4757
+- **Published:** 19 September 2026
+- **Preferred scholarly citation:** the peer-reviewed journal article above
+- **Machine-readable citation:** `CITATION.cff`, `CITATION.bib`, `CITATION.ris`
 
-## Contribution and endpoint boundary
+If the scientific framework, analyses, or findings contribute to a new work, cite the peer-reviewed article. If the software, schema, or code is directly reused or modified, also cite the `v1.0.0` software release and follow the repository license guidance.
 
-The contribution is a methodological framework and retrospective secondary analysis, not a new statistical method.
+## What this project is
 
-The focal Wong–Qiu result concerns task-specific expert-rated originality, not general creativity or durable learning.
+This repository accompanies a methodological study of how comparative conclusions about Generative AI interventions can depend on the conditions under which outcomes are elicited. The framework separates the target construct, task/content, assessment conditions, and verification evidence before intervention rankings are compared across regimes.
 
-AI-assisted performance alone does not establish independent human performance.
+The contribution is a methodological framework and retrospective secondary analysis, not a new statistical method. The focal empirical reconstruction concerns the Wong–Qiu comparison of unrestricted ChatGPT and learner-first AI across two named creativity tasks. The repository also provides the executable **Assessment-Regime Reporting Profile (ARRP)**, construct-commensurability checks, evidence-synthesis audits, sensitivity analyses, provenance records, and deterministic software-validation tests.
 
-Rank preservation across assessment contexts cannot be inferred from randomization alone.
+## Article-linked findings represented in this repository
 
-Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled.
+- **AI-assisted performance alone does not establish independent human performance.** Comparative claims depend on the assessment regime in which the outcome is elicited.
+- For task-specific expert-rated **originality**, the unrestricted-minus-learner-first contrast is **+0.78** points on the stuffed-bunny improvement task and **−0.73** points on the subsequent vocabulary-game task under the no-AI assessment protocol. The orientation-aware reversal analysis with Holm adjustment across originality and usefulness gives **p = 0.01351**.
+- **Usefulness** provides a secondary opposite-sign pattern, with contrasts of **+0.66** and **−0.58**, respectively; the same two-outcome Holm-adjusted orientation-safe p value is **0.01351**.
+- A separate three-dimension sensitivity analysis does **not** support an elaboration reversal. The corresponding orientation-safe Holm-adjusted p value is **0.92891**.
+- The task-specific reversal does not identify an isolated causal effect of AI removal because task content, sequence, transfer demands, and AI-access policy change together.
+- The construct-commensurability gate prevents shared labels from being treated automatically as a common construct or common estimand. ARRP provides an executable reporting structure, but it is not presented as an independently validated psychometric instrument or consensus standard.
 
-The source Wong–Qiu experiment already reported an interaction and opposite active-arm task comparisons. This repository does not claim a newly discovered interaction, a new statistical test, or a general creativity/learning effect. It supplies an auditable workflow for assessment-regime rank transport, explicit outcome scope, established inference, and evidence synthesis. No meta-analysis is generated from incompatible or incomplete inputs.
+## Scientific scope and interpretation
 
-The focal endpoint is **expert-rated originality of submitted products** in two named tasks: stuffed-bunny improvement and subsequent vocabulary-game invention. The same 1–7 labels and high within-task rater ICCs do not establish cross-task invariance. Ratings were relative to each task's product pool. Access schedules differ by intervention in Task 1, and task content, order and demands change together with access. The contrast is between complete intervention packages, not the isolated causal effect of AI removal.
+The focal endpoint is **expert-rated originality of submitted products** in two named tasks. It is not a measure of general creativity or durable learning. The same 1–7 rating labels and high within-task rater agreement do not establish cross-task measurement invariance. Ratings were relative to each task's product pool, and the intervention packages differ in their AI-access schedules and task sequence.
 
-## Corrected numerical result
+The source Wong–Qiu experiment already reported an interaction and opposite active-arm task comparisons. This repository does not claim discovery of a new interaction, a new statistical test, or a general creativity/learning effect. It provides an auditable assessment-regime comparison workflow, explicit outcome scope, established inference, and reproducible evidence-synthesis checks.
 
-Contrasts are unrestricted minus learner-first. Intervals below are marginal Welch–Satterthwaite approximations from published rounded group sizes, means and standard deviations.
+Canonical methodological boundaries used throughout the repository are:
 
-| Endpoint | Task 1 contrast, 95% CI | Task 2 contrast, 95% CI | Two-orientation + two-outcome Holm p |
-|---|---|---|---:|
-| Originality: focal reporting endpoint | +0.78 [0.35, 1.21] | −0.73 [−1.26, −0.20] | 0.01351 |
-| Usefulness: secondary, task-goal-relative | +0.66 [0.28, 1.04] | −0.58 [−1.00, −0.16] | 0.01351 |
+- The focal Wong–Qiu result concerns task-specific expert-rated originality, not general creativity or durable learning.
+- Rank preservation across assessment contexts cannot be inferred from randomization alone.
+- Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled.
 
-The old 0.00676 value adjusted a **direction-conditional** IUT across outcomes. Because no prospective direction plan for this retrospective reanalysis is supplied, the main calculation now handles both orientations before applying Holm. The original two-outcome family is retained despite the narrower reporting emphasis; the hierarchy is not presented as preregistered. All four Bonferroni simultaneous intervals also retain the required signs at nominal joint 95% coverage, subject to marginal Welch validity.
+## ARRP and comparison gate
 
-A separate three-dimension sensitivity family adds source-reported elaboration: corrected p = 0.02027 for originality/usefulness and 0.92891 for elaboration. There is no supported elaboration reversal. This is an all-rated-dimensions check, not a claim that elaboration is interchangeable with creativity.
+[`docs/ARRP.md`](docs/ARRP.md) and [`arrp.schema.json`](arrp.schema.json) define the Assessment-Regime Reporting Profile. The implementation separates outcome conditions A–D–O–G from evidence of non-use N and applies an explicit construct-commensurability gate before rank labels are assigned.
 
-## Reproduce the self-contained audit
+The validation layer contains **62 deterministic ARRP specification checks**, **20 executable cases**, **10 metamorphic pairs**, and **77 worked records**. These checks establish software/specification conformance, not independent content validity or inter-rater reliability.
 
-Use Python 3.13.5 and the provided 32-package direct/transitive lock for the validated environment.
+## Repository contents
+
+```text
+GenAI-Rank-Reversal/
+├── README.md                     Scientific landing page and citation funnel
+├── PROJECT_METADATA.json         Canonical project/article metadata source
+├── CITATION.cff                  GitHub-native citation metadata
+├── CITATION.bib                  BibTeX article/software citation export
+├── CITATION.ris                  RIS article/software citation export
+├── codemeta.json                 CodeMeta 3.1 research-software metadata
+├── ARTICLE_METADATA.json         Schema.org article metadata
+├── llms.txt                      Supplementary machine-readable project index
+├── DATA_AVAILABILITY.md          Public data sources and reuse boundaries
+├── THIRD_PARTY_DATA_NOTICE.md    Third-party source and redistribution policy
+├── REPRODUCTION_LEVELS.md        Self-contained, software, and raw-dependent levels
+├── README_RUNNING.md             Detailed execution instructions
+├── CONTRIBUTING.md               Contribution guidance
+├── SECURITY.md                   Security reporting policy
+├── GITHUB_SETTINGS_CHECKLIST.md  About/Website/Topics/social-preview settings
+├── CHANGELOG.md                  Version and release history
+├── assets/                       GitHub social-preview assets
+├── code/                         Analysis and validation programs
+├── results/                      Canonical machine-readable derived results
+├── figures/                      Article-linked analytical/conceptual figures
+├── docs/                         Methods, provenance, validation, and reuse guides
+├── tests/                        Mathematical/algorithmic regression tests
+├── tools/                        Metadata, release, and repository validation tools
+└── .github/                      Issue templates and repository-quality workflow
+```
+
+The public tree intentionally excludes submission-system files, reviewer correspondence, local environments, caches, credentials, and third-party raw participant data.
+
+## Quick start
+
+Validated runtime: **Python 3.13.5**.
 
 ```bash
-python -m pip install -r requirements-lock.txt
+python -m venv .venv
+# activate the environment for the local platform
+python -m pip install --upgrade pip
+pip install -r requirements-lock.txt
 python tools/validate_repository.py
 ```
 
-Individual calculations:
+The full repository gate verifies metadata consistency, dependency closure, ARRP schema/specification conformance, construct-commensurability rules, deterministic regeneration of self-contained results, expected numerical values, and the 56-test mathematical/algorithmic regression suite.
+
+Selected self-contained analyses can also be regenerated directly:
 
 ```bash
 python code/analyze_wong_direct_reversal.py
 python code/analyze_wong_direct_reversal.py --outcomes originality usefulness elaboration --output results/wong_three_dimension_inference.csv --summary results/wong_three_dimension_summary.csv
+python code/assessment_regime_rank_robustness.py
+python code/assessment_regime_rank_sensitivity.py results/wong_rank_reversal_sensitivity_input.csv results/wong_rank_reversal_sensitivity.csv
 python code/build_paired_profiles.py --results results
-python code/assessment_regime_rank_order.py
 python code/build_paired_rank_evidence.py --results results
 python -m pytest -q
 ```
 
-The full validation gate checks metadata consistency, dependency closure, structural ARRP conformance, input/gate failures, expected numerical values and deterministic regeneration. The 56 tests establish computational behavior, not scientific validity or population transport.
+## Reproduction levels
 
-## Freshly recomputed versus archived
+- **Level 1 — Self-contained numerical reconstruction:** rebuilds the published-summary Wong contrasts, orientation-aware reversal tests, simultaneous intervals, three-dimension sensitivity, paired evidence, and deterministic weight/scale diagnostics.
+- **Level 2 — Software verification:** runs metadata, dependency, schema, ARRP, construct-gate, expected-result, and pytest checks without third-party raw participant data.
+- **Level 3 — Raw-dependent regeneration:** requires source files obtained from the original public repositories under their own licenses and access conditions. Several archived participant-level outputs cannot be represented as freshly reproduced in this repository snapshot because the necessary raw inputs or complete raw-to-result pipelines are not supplied.
 
-This revision freshly recomputes published-summary Wong contrasts, orientation-aware reversal tests, simultaneous intervals, the elaboration sensitivity family, deterministic profile/evidence derivations, and scale/weight diagnostics. It does **not** freshly rerun participant bootstraps, label permutations, cluster models or every original exclusion pipeline. No raw participant file was supplied or retrieved successfully in this revision.
+Details are in [`REPRODUCTION_LEVELS.md`](REPRODUCTION_LEVELS.md), [`README_RUNNING.md`](README_RUNNING.md), and [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
-| Program | Raw-source reproduction status in this snapshot |
-|---|---|
-| Wong, Bastani, Kestin, Pardos | Raw-dependent programs supplied; raw source inputs absent; participant outputs archived. |
-| Bassner | Prepared-column helper supplied, but the complete raw-to-prepared transformation is absent. |
-| Cicek and Zhou | Archived derived outputs; complete raw-to-result pipelines absent. Zhou access is author-reported and restricted. |
+## Results release asset
 
-The archived Wong permutation table now correctly labels constant permutation-SD standardization and the sharp-null scope. Existing marginal permutation p values were Holm-adjusted without regenerating the permutations. The max-statistic column is not represented as a general weak-null or strong marginal-FWER test. See `results/revision_validation_scope.json`, `DATA_AVAILABILITY.md` and `REPRODUCTION_LEVELS.md`.
+The `v1.0.0` release contains **`GenAI_Rank_Reversal_results_v1.0.0.zip`**. The archive contains the repository's `results/` directory as a convenient downloadable research-results object. GitHub also generates `Source code (zip)` and `Source code (tar.gz)` automatically from the tag.
 
-## ARRP and comparison gate
+No custom checksum/hash manifest is distributed with this release. The release is intentionally not configured as immutable, consistent with the requested ability to correct files later if necessary. Scientific changes should nevertheless be documented through the changelog and an appropriate version update rather than silently changing the interpretation of the published record.
 
-[ARRP documentation](docs/ARRP.md) and [the complete JSON Schema](arrp.schema.json) separate outcome conditions A–D–O–G from non-use evidence N. The actual rank-classification code now enforces `results/construct_commensurability_audit.csv`; missing, unclear or ineligible scope does not receive a rank label. An eligible task-specific score comparison is not validation of a common construct.
+## Data and artifact availability
 
-The worked Wong example records source-reported protocol prevention for the study ChatGPT interface, not independently verified non-use; transfer distance is left unclear. Software checks cover structural rules only. The 77 author-coded records are not an independent inter-rater or content-validity study.
+Third-party participant-level source files are not redistributed. Public locations include the Bastani et al. GitHub repository, the Harvard AI Tutor data repository, Figshare data for Pardos and Bhandari, Zenodo records for Bassner and Çiçek, and OSF resources for Wong–Qiu and Zhou. Exact source locations, expected filenames, access boundaries, and rerun instructions are documented in [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) and [`THIRD_PARTY_DATA_NOTICE.md`](THIRD_PARTY_DATA_NOTICE.md).
 
-## Main outputs and documentation
+Project-authored code, ARRP materials, derived result tables, figures, provenance summaries, and validation infrastructure are distributed in this repository. Code is released under the MIT License. Project-authored assessment-regime coding tables and derived evidence-map metadata follow the data-license guidance in [`DATA_LICENSE.md`](DATA_LICENSE.md); third-party rights remain with their original sources.
 
-`results/wong_direct_reversal_inference.csv` and `results/wong_direct_reversal_summary.csv` contain the corrected focal inference. `results/wong_three_dimension_summary.csv` records the sensitivity family. `results/paired_rank_evidence_revised.csv` separates the scoped Wong finding from unestablished preservation in Bastani/Bassner. `docs/STATISTICAL_SCOPE.md` defines the exact testing and transformation assumptions. `docs/RANK_ROBUSTNESS.md` explains why fixed-contrast weight/scale sensitivity is not a sampling confidence region.
+## Research areas and search terms
 
-The source summary statistics come from Wong and Qiu (2026), *Think First, ChatGPT Later*, DOI: 10.1007/s10648-026-10118-7. All third-party sources and usage boundaries remain in `THIRD_PARTY_DATA_NOTICE.md`. No raw third-party records or access credentials are redistributed.
+**Article keywords:** generative artificial intelligence, large language models, AI in education, human–AI collaboration, assisted performance, learning outcomes, assessment validity, rank reversal, evidence synthesis, reporting framework.
 
-## Citation and reuse
+**Related indexing/search terms:** generative AI; GenAI; LLM; human–AI collaboration; AI-assisted task performance; independent human performance; performance–learning gap; retention; learning transfer; assessment regime; outcome elicitation; intervention rank reversal; assessment-regime rank transport; qualitative interaction; crossover interaction; causal transportability; treatment-effect heterogeneity; estimand heterogeneity; meta-analysis; evidence synthesis; cognitive offloading; assessment validity; reproducibility.
 
-`PROJECT_METADATA.json` is the identity source for generated CFF, BibTeX, RIS, CodeMeta and article metadata. Publication identifiers remain null until real records exist. Code is MIT-licensed; project-authored coding metadata follow `DATA_LICENSE.md`, with third-party rights retained. See `README_RUNNING.md` for raw-dependent commands and `docs/RELEASE_PROVENANCE.md` for the draft release policy.
+## Citation
+
+Peer-reviewed article:
+
+> **Kovari, A. (2026).** _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. **Computers, 15(9), 633.** https://doi.org/10.3390/computers15090633
+
+Software release:
+
+> **Kovari, A. (2026).** _GenAI-Rank-Reversal_ (Version 1.0.0). GitHub. https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
+
+Use `CITATION.cff`, `CITATION.bib`, or `CITATION.ris` for machine-readable citation export.
+
+## License, contributions, and security
+
+Original source code and documentation are released under the [`MIT License`](LICENSE). Third-party datasets and source materials retain their original licenses and access terms. See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md), and [`THIRD_PARTY_DATA_NOTICE.md`](THIRD_PARTY_DATA_NOTICE.md).

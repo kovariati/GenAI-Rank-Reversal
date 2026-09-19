@@ -3,10 +3,9 @@ from pathlib import Path
 import re, sys
 ROOT=Path(__file__).resolve().parents[1]
 text_ext={'.py','.md','.txt','.json','.csv','.yml','.yaml','.cff','.bib','.ris','.toml'}
-# Development-release labels from the private drafting workflow must not leak into the public tree.
+# Development-only labels, local paths, review artefacts, and secrets must not leak into the public tree.
 patterns={
  'internal_revision_label':re.compile(r'(?i)(?:^|[^a-z0-9])v(?:1[5-9]|2[0-3])(?:[^0-9]|$)|_v(?:1[5-9]|2[0-3])'),
- 'old_publisher_brand':re.compile(r'(?i)\bMDPI\b|submitted to computers|journal:\s*Computers|"name"\s*:\s*"Computers"'),
  'local_unix_path':re.compile(r'(?<!https:)(?<!http:)\/(?:mnt\/data|home\/[^\s/]+|Users\/[^\s/]+)\/'),
  'local_windows_path':re.compile(r'(?i)\b[A-Z]:\\\\?(?:Users|Temp|DATA_SSD|AdaptiveLearningSim|Missingness|SmallDataBench|EngTFM)'),
  'review_material':re.compile(r'(?i)reviewer[_ -]?matrix|external_review_round|revision_matrix'),

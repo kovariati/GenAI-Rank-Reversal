@@ -3,15 +3,15 @@
   "project_short_name": "GenAI-Rank-Reversal",
   "suggested_repository_name": "GenAI-Rank-Reversal",
   "article_title": "Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes",
-  "article_status": "manuscript",
+  "article_status": "published",
   "article_year": 2026,
   "article_abstract": "Generative artificial intelligence (AI) and large language models can improve assisted task performance without establishing learning, retention, or transfer. Evaluating AI in education and human–AI collaboration therefore requires distinguishing assisted from independent human performance. A methodological framework separates target constructs, tasks, assessment conditions, and verification evidence to examine when intervention rankings can be compared across assessment regimes. A retrospective secondary analysis uses established statistical procedures to reassess a previously reported comparison of unrestricted and learner-first ChatGPT use. Published rounded summary statistics indicate a task-specific rank reversal in expert-rated originality: unrestricted-minus-learner-first contrasts are +0.78 points for a stuffed-bunny improvement task and −0.73 for a subsequent vocabulary-game task under a no-AI protocol (two-orientation testing; Holm-adjusted p = 0.01351 across originality and usefulness). Usefulness provides secondary corroboration; reversal is not supported for elaboration. These findings concern task-specific product ratings, not general creativity or durable learning. Task content, sequence, and AI-access policy vary together, precluding attribution to AI removal alone. The Assessment-Regime Reporting Profile supports reporting checks but lacks independent validation. The contribution is an auditable workflow for assessment validity and evidence synthesis: intervention comparisons require explicit outcome definitions and defensible comparability assumptions before findings are pooled or generalized.",
-  "journal": null,
-  "article_doi": null,
-  "publisher_url": null,
+  "journal": "Computers",
+  "article_doi": "10.3390/computers15090633",
+  "publisher_url": "https://www.mdpi.com/2073-431X/15/9/633",
   "repository_url": "https://github.com/kovariati/GenAI-Rank-Reversal",
-  "release_url": null,
-  "release_date": null,
+  "release_url": "https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0",
+  "release_date": "2026-09-19",
   "software_version": "1.0.0",
   "authors": [
     {
@@ -93,14 +93,23 @@
     "Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled."
   ],
   "key_finding": "A comparative intervention ordering can reverse across construct-linked assessment designs; such transport must be demonstrated or justified rather than assumed.",
-  "release_policy": "During peer review, the public repository root is the canonical inspection point. After the article has a definitive bibliographic record, the audited article-associated software state will be frozen as a version-specific v1.0.0 Git tag and GitHub Release with versioned release assets; until that release exists, no release URL or repository DOI is claimed.",
-  "repository_description": "Task-specific GenAI intervention ordering: methodological framework, corrected secondary analysis of originality ratings, reproducible summary-statistic inference, reporting schema, tests, and explicit raw-data reproduction limits.",
+  "release_policy": "The publication-linked v1.0.0 GitHub Release is associated with the peer-reviewed article in Computers 15(9), 633 (2026). The v1.0.0 tag identifies the source/reproducibility state and GenAI_Rank_Reversal_results_v1.0.0.zip provides a convenience bundle of the results directory. No custom checksum/hash manifest or immutable-release setting is used. Packaging corrections can therefore be made if necessary; scientific changes should be documented with an updated version.",
+  "repository_description": "Code and results for \"Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes\". Computers 15(9), 633 (2026). DOI: 10.3390/computers15090633",
   "github_owner": "kovariati",
   "software_license_url": "https://spdx.org/licenses/MIT.html",
   "runtime": {
     "python": "3.13.5",
     "platform": "Linux x86_64"
   },
-  "revision_date": "2026-09-14",
-  "revision_status": "final local manuscript snapshot; planned software version remains unreleased"
+  "revision_date": "2026-09-19",
+  "revision_status": "published article metadata synchronized; publication-linked v1.0.0 release state",
+  "article_volume": 15,
+  "article_issue": 9,
+  "article_number": 633,
+  "publication_date": "2026-09-19",
+  "submission_received": "2026-08-24",
+  "revised_date": "2026-09-17",
+  "accepted_date": "2026-09-18",
+  "release_asset": "GenAI_Rank_Reversal_results_v1.0.0.zip",
+  "software_title": "GenAI-Rank-Reversal Research Software"
 }

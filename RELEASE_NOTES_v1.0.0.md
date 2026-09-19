@@ -1,158 +1,74 @@
-# DRAFT RELEASE TEMPLATE — GenAI Rank Reversal v1.0.0
+# GenAI-Rank-Reversal v1.0.0
 
-This file is a **DRAFT RELEASE TEMPLATE** for the planned publication-linked v1.0.0 release of code, results, and reproducibility materials associated with the manuscript:
+Canonical code, results, and reproducibility release for the peer-reviewed article:
 
-> **Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes**
+**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Computers, 15(9), 633.** https://doi.org/10.3390/computers15090633
 
-## Preferred citation
+**Publisher article:** https://www.mdpi.com/2073-431X/15/9/633
 
-**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Manuscript.**
+GenAI-Rank-Reversal is an auditable methodological and computational framework for comparing Generative AI interventions across assessment regimes. It separates assisted from independent performance, makes the construct/task/assessment conditions explicit, and tests whether intervention orderings can be transported across outcome-elicitation contexts.
 
-The final journal citation, DOI, and publisher link will be added only after a final publication record exists. No provisional or fabricated DOI is used. The version-specific `v1.0.0` release is finalized only after those definitive article metadata exist, so the repository citation files and release metadata can be synchronized before the release is frozen.
+## Key scientific findings
 
-If the assessment-regime rank-transport framework, ARRP reporting schema, statistical methods, numerical results, or released reproducibility artefacts contribute to scientific work, please cite the associated article once its final bibliographic record is available. For direct software or schema reuse, also follow `CITATION.cff`, `LICENSE`, and `DATA_LICENSE.md`.
+- **AI-assisted performance does not by itself establish independent human performance.**
+- For task-specific expert-rated **originality**, the unrestricted-minus-learner-first contrast changes from **+0.78** points on the stuffed-bunny improvement task to **−0.73** points on the subsequent vocabulary-game task under the no-AI assessment protocol. The orientation-aware reversal analysis with Holm adjustment across originality and usefulness gives **p = 0.01351**.
+- **Usefulness** shows a secondary opposite-sign pattern of **+0.66** and **−0.58**; the same two-outcome Holm-adjusted orientation-safe p value is **0.01351**.
+- A three-dimension sensitivity analysis does **not** support an elaboration reversal.
+- The task-specific reversal is not interpreted as an isolated causal effect of AI removal because task content, sequence, transfer demands, and AI-access policy change together.
+- The ARRP and construct-commensurability gate make assessment-regime assumptions explicit before evidence is pooled or generalized.
 
-## About this project
+## What this release contains
 
-Generative AI and large language models can improve task performance while assistance is available without implying equivalent gains in independent human performance, learning, retention, or transfer.
+The tagged source repository contains the analysis code, ARRP schema and operational rules, construct-commensurability audit, evidence-synthesis schema audit, provenance metadata, canonical derived outputs, analytical figures, citation metadata, regression tests, and repository-validation tools.
 
-This project addresses a stronger methodological question:
+The attached **`GenAI_Rank_Reversal_results_v1.0.0.zip`** contains the complete canonical `results/` directory as a convenient downloadable results package.
 
-> **The intervention that performs best with AI need not be the intervention that performs best without AI.**
+Raw third-party participant data are not redistributed. Exact public source locations and access boundaries are documented in `DATA_AVAILABILITY.md` and `THIRD_PARTY_DATA_NOTICE.md`.
 
-The central problem is **assessment-regime rank transport**. An intervention ranking identified under one assessment regime does not automatically identify the ranking under another assessment regime.
+## Reproduce or validate
 
-Three reusable methodological conclusions organize the project:
-
-> **AI-assisted performance alone does not establish independent human performance.**
-
-> **Rank preservation across assessment contexts cannot be inferred from randomization alone.**
-
-> **Differences in outcome-elicitation context can create estimand heterogeneity before statistical heterogeneity is modeled.**
-
-These issues are relevant to human–AI collaboration, AI-assisted assessment, learning and transfer, causal inference, meta-analysis, evidence synthesis, and other settings where assisted output is interpreted as evidence about later independent human capability.
-
-## Included in v1.0.0
-
-- assessment-regime rank-transport framework
-- direct opposite-sign inference for intervention rank reversal
-- intersection–union reversal testing with multiplicity control
-- participant-level conditional randomization inference
-- rank-sensitivity and bounded weight/scale robustness analysis
-- construct-commensurability gate for cross-regime comparison
-- paired rank-preservation and rank-reversal evidence profiles
-- **Assessment-Regime Reporting Profile (ARRP)**
-- machine-readable ARRP JSON Schema and worked example
-- executable ARRP feature and metamorphic tests
-- deterministic ARRP specification and traceability validation
-- diagnostic meta-analysis coding-schema audit
-- canonical derived numerical results and manuscript-facing figures
-- conceptual figures for the C/Q/E/V construct gate and manuscript-facing rank-transport evidence
-- source and data provenance documentation
-- frozen direct and transitive Python dependency environment
-- machine-readable citation and article metadata
-- fail-closed public-release and reproducibility validation
-- audit/reproducibility artifact index (`docs/REPRODUCIBILITY_ARTIFACTS.md`) covering synthesis, ARRP, provenance, paired-dataset, rank-robustness, and computational-validation records
-
-Internal working material, development-version history, local paths, caches, debug/progress files, credentials, and non-redistributable participant-level data are intentionally excluded.
-
-## Assessment-Regime Reporting Profile (ARRP)
-
-ARRP is an executable outcome-level reporting schema for five conditions that can affect the interpretation of AI-related performance estimates:
-
-- **A — AI availability:** whether AI assistance is available during the scored outcome
-- **D — Delay:** temporal distance between intervention or exposure and assessment
-- **O — Overlap:** task or item overlap between assisted activity and assessment
-- **G — Generalization:** transfer or generalization demand
-- **N — Non-use evidence:** evidence supporting AI non-use during independent assessment
-
-ARRP is derived from the identification problem addressed in the manuscript. It is **not presented as a validated psychometric instrument or consensus reporting standard**.
-
-See `docs/ARRP.md`, `arrp.schema.json`, and the machine-readable worked example in `examples/`.
-
-## Key scientific result and statistical scope
-
-This is a methodological framework and retrospective secondary analysis, not a new statistical method. Wong and Qiu already reported the interaction and opposite active-arm comparisons. The focal endpoint here is expert-rated originality of products in two named tasks: stuffed-bunny improvement and vocabulary-game invention. The published-summary unrestricted-minus-learner-first contrasts are +0.78 and -0.73. Accounting for both reversal orientations and applying Holm across the retained originality/usefulness family gives p=0.01351 for each outcome. Usefulness is secondary, task-goal-relative corroboration. The separate three-dimension family gives p=0.02027 for originality/usefulness and p=0.92891 for elaboration; the latter does not show supported reversal.
-
-These ratings do not establish a common latent creativity scale, durable learning, an isolated AI-removal effect, or performance on unobserved tasks. The elementary model argument establishes only that randomization imposes no cross-context sign restriction by itself; one empirical example is not treated as proof of a universal population claim. The comparison-scope gate is enforced by code and does not upgrade task-specific ratings into a shared latent construct.
-
-The full revised self-contained validator passes, including 56 pytest cases and 62 ARRP specification checks. These checks are not independent content-validity or human-coding-reliability evidence. Fresh results come from published summary statistics and supplied-table derivations; archived participant-level bootstrap/permutation/model outputs were not freshly rerun. Complete raw-to-result pipelines are not supplied for Bassner, Cicek or Zhou. See `results/revision_validation_scope.json` and `docs/STATISTICAL_SCOPE.md`.
-
-## Implications for meta-analysis and evidence synthesis
-
-Assessment regime can create **estimand heterogeneity before statistical heterogeneity**.
-
-> **Standardization resolves units, not estimand identity.**
-
-The included seven-synthesis audit is a diagnostic of **coding-schema vulnerability and readiness**. It does not claim that the examined meta-analyses are invalid or that incompatible estimands were necessarily pooled.
-
-## Source code and reproducibility
-
-When the publication-linked release is created, the versioned source code, validation tools, reporting schemas, environment specification, documentation, and small canonical outputs are intended to be contained in the **`v1.0.0` Git tag**. The present deliverable is a local revised snapshot, not evidence that this tag or release is live.
-
-GitHub automatically provides downloadable archives under **Source code (zip)** and **Source code (tar.gz)**. A separate full-repository reproducibility archive is intentionally not attached because it would duplicate the tagged source tree.
-
-To validate the release:
+Fast repository validation:
 
 ```bash
 python -m pip install -r requirements-lock.txt
 python tools/validate_repository.py
+```
+
+Key self-contained analyses:
+
+```bash
+python code/analyze_wong_direct_reversal.py
+python code/analyze_wong_direct_reversal.py --outcomes originality usefulness elaboration --output results/wong_three_dimension_inference.csv --summary results/wong_three_dimension_summary.csv
+python code/build_paired_profiles.py --results results
+python code/build_paired_rank_evidence.py --results results
+python code/assessment_regime_rank_robustness.py
 python -m pytest -q
 ```
 
-See `README_RUNNING.md`, `REPRODUCTION_LEVELS.md`, and `docs/REPRODUCIBILITY.md` for the available validation and regeneration workflows.
+See `REPRODUCTION_LEVELS.md`, `README_RUNNING.md`, and `docs/REPRODUCIBILITY.md` for the distinction between self-contained reconstruction, software verification, and raw-dependent regeneration.
 
-The public validation does not require redistribution of third-party participant-level datasets.
+## Release asset policy
 
-## Release artifact
+GitHub automatically provides **Source code (zip)** and **Source code (tar.gz)** for the `v1.0.0` tag. The only custom release asset is `GenAI_Rank_Reversal_results_v1.0.0.zip`.
 
-### `GenAI-Rank-Reversal-v1.0.0-results-and-artifacts.zip`
+No custom checksum/hash manifest is published for this release, and the release should **not** be made immutable. This keeps later packaging or documentation corrections possible. Scientific changes should be recorded in `CHANGELOG.md` and, when they alter the scientific release state, should use an updated semantic version.
 
-Convenience bundle containing canonical derived numerical results, result tables, manuscript-facing figures, ARRP schema/example, public provenance summaries, and release-validation material.
+## Citation
 
-Large or non-redistributable third-party participant-level data are intentionally not included.
+If the scientific framework, analyses, or findings contribute to a new work, cite the peer-reviewed article:
 
-## When to cite or reuse this project
+**Kovari, A. (2026). _Generative AI, Performance, and Learning: A Framework for Comparing Interventions Across Assessment Regimes_. Computers, 15(9), 633.** https://doi.org/10.3390/computers15090633
 
-This repository may be useful when research:
+If the software, schema, or code is directly reused or modified, also cite the software release:
 
-- distinguishes AI-assisted task performance from independent human performance or learning
-- compares assisted and unassisted outcomes
-- evaluates whether intervention rankings transport across assessment regimes
-- studies learning transfer, retention, or post-assistance capability
-- synthesizes heterogeneous Generative AI outcomes
-- evaluates human–AI collaboration or AI-assisted assessment
-- reports AI availability, delay, task overlap, transfer demand, or evidence of AI non-use
-- implements direct rank-reversal inference
-- conducts weighting/scaling sensitivity analyses for regime-dependent rankings
-- applies the ARRP outcome-reporting schema
-
-## Research and indexing terms
-
-Generative AI; large language models; human–AI collaboration; AI-assisted performance; independent human performance; performance–learning gap; learning outcomes; learning transfer; retention; assessment validity; assessment regimes; intervention rank reversal; qualitative interaction; causal inference; causal transportability; treatment-effect heterogeneity; estimand heterogeneity; meta-analysis; evidence synthesis; reproducible research.
-
-## Citation metadata
-
-Machine-readable citation and discovery metadata are provided in:
-
-- `CITATION.cff`
-- `CITATION.bib`
-- `CITATION.ris`
-- `codemeta.json`
-- `ARTICLE_METADATA.json`
-- `llms.txt`
-
-These metadata are generated from the canonical `PROJECT_METADATA.json` source and validated for cross-file consistency.
-
-## Canonical links
+**Kovari, A. (2026). _GenAI-Rank-Reversal_ (Version 1.0.0). GitHub.** https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0
 
 **Repository:** https://github.com/kovariati/GenAI-Rank-Reversal  
-**Release:** [release URL to be added only after the final v1.0.0 release is published]  
-**Article DOI:** to be added after publication  
-**Publisher article:** to be added after publication
+**Release:** https://github.com/kovariati/GenAI-Rank-Reversal/releases/tag/v1.0.0  
+**Article DOI:** https://doi.org/10.3390/computers15090633  
+**Publisher article:** https://www.mdpi.com/2073-431X/15/9/633  
+**Author ORCID:** https://orcid.org/0000-0003-3521-4757
 
-## Validation and versioning
+## Scientific identity
 
-When created after definitive publication metadata are available, the planned publication-linked `v1.0.0` tag will identify the canonical article-associated scientific state of the code, derived results, ARRP reporting template, and reproducibility infrastructure. Until then, the public repository remains the reviewable pre-release state.
-
-Scientific release artifacts should not be silently replaced. Any later scientific or packaging change that alters a released artifact should use a new semantic version and an updated change log.
+This publication-day release synchronizes the public research object with the published version of record in *Computers*. The release metadata update does not alter the canonical numerical result set represented by the repository. It adds the final journal citation, DOI, publisher link, publication date, version-specific release identity, and downloadable results bundle.

@@ -56,6 +56,6 @@ python code/validate_arrp_specification.py
 
 ## How to cite ARRP
 
-If the ARRP concepts, decision rules, or scientific interpretation contribute to your work, cite the associated manuscript/article using [`CITATION.cff`](../CITATION.cff), [`CITATION.bib`](../CITATION.bib), or [`CITATION.ris`](../CITATION.ris). If you directly reuse or modify the executable schema/code, also cite the software release and follow the code/data license guidance.
+If the ARRP concepts, decision rules, or scientific interpretation contribute to your work, cite the associated peer-reviewed article using [`CITATION.cff`](../CITATION.cff), [`CITATION.bib`](../CITATION.bib), or [`CITATION.ris`](../CITATION.ris). If you directly reuse or modify the executable schema/code, also cite the software release and follow the code/data license guidance.
 
 Full Draft 2020-12 instance validation now covers required and additional fields, types, nonblank evidence, and conditional exact-delay fields. The actual rank-classification pipeline separately enforces comparison eligibility. These are computational checks, not validation of author coding.

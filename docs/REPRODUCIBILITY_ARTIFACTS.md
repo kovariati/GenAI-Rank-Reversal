@@ -2,7 +2,7 @@
 
 # Reproducibility and audit artifacts
 
-This page indexes the detailed reproducibility records that support the associated manuscript. Machine-readable ledgers, software-conformance evidence, provenance, and extended computational outputs are maintained in the public research repository rather than expanded in the journal article. The article itself retains the scientific definitions, analysis specifications, direct estimates, uncertainty intervals, inferential boundaries, and, in Appendix A only, the composition/scale sensitivity formalism for regime-agnostic ordering under explicit weighting and scale conventions.
+This page indexes the detailed reproducibility records that support the associated peer-reviewed article. Machine-readable ledgers, software-conformance evidence, provenance, and extended computational outputs are maintained in the public research repository rather than expanded in the journal article. The article itself retains the scientific definitions, analysis specifications, direct estimates, uncertainty intervals, inferential boundaries, and, in Appendix A only, the composition/scale sensitivity formalism for regime-agnostic ordering under explicit weighting and scale conventions.
 
 ## Evidence and reproducibility map
 
@@ -20,7 +20,7 @@ This page indexes the detailed reproducibility records that support the associat
 | Master source provenance | `results/source_provenance_master.csv` | 106 provenance objects and redistribution boundaries |
 | Rank weighting/scale sensitivity | `docs/RANK_ROBUSTNESS.md`, `code/assessment_regime_rank_robustness.py`, `results/wong_rank_robustness_region.csv` | Machine-readable implementation and extended outputs supporting Appendix A |
 | Computational validation | `docs/COMPUTATIONAL_VALIDATION.md`, `tests/test_algorithm_regressions.py`, `tests/test_expected_results.py`, `tools/validate_repository.py` | Mathematical, algorithmic and repository regression checks |
-| Public release validation | `docs/PUBLIC_RELEASE_VALIDATION.md` | Consolidated pre-publication validation status and raw-source boundary |
+| Public release validation | `docs/PUBLIC_RELEASE_VALIDATION.md` | Consolidated publication-release validation status and raw-source boundary |
 | Conceptual/reusable figures | `tools/build_conceptual_figures.py`, `figures/figure1_structural_rank_transport.*`, `figures/figure2_symmetrical_evidence_rule.*` | The C/Q/E/V structural gate is maintained as a canonical SVG with synchronized PDF/PNG exports; the build tool copies those canonical assets without redrawing them. The symmetrical evidential-rule visualization is generated separately; only the structural gate is used in the revised article |
 
 ## Interpretation boundary
