@@ -29,11 +29,11 @@ The contribution is a methodological framework and retrospective secondary analy
 ## Article-linked findings represented in this repository
 
 - **AI-assisted performance alone does not establish independent human performance.** Comparative claims depend on the assessment regime in which the outcome is elicited.
-- For task-specific expert-rated **originality**, the unrestricted-minus-learner-first contrast is **+0.78** points on the stuffed-bunny improvement task and **−0.73** points on the subsequent vocabulary-game task under the no-AI assessment protocol. The orientation-aware reversal analysis with Holm adjustment across originality and usefulness gives **p = 0.01351**.
-- **Usefulness** provides a secondary opposite-sign pattern, with contrasts of **+0.66** and **−0.58**, respectively; the same two-outcome Holm-adjusted orientation-safe p value is **0.01351**.
-- A separate three-dimension sensitivity analysis does **not** support an elaboration reversal. The corresponding orientation-safe Holm-adjusted p value is **0.92891**.
+- For task-specific expert-rated **originality**, the unrestricted-minus-learner-first contrast is **+0.78** points on the stuffed-bunny improvement task and **−0.73** points on the subsequent vocabulary-game task under the study's no-AI assessment protocol. After accounting for both possible reversal orientations and applying Holm correction across the retained originality/usefulness family, the adjusted **p value is 0.01351**.
+- **Usefulness** provides a secondary opposite-sign pattern, with contrasts of **+0.66** and **−0.58**, respectively; the corresponding Holm-adjusted value after accounting for both reversal orientations is also **p = 0.01351**.
+- A separate three-dimension sensitivity analysis does **not** support an elaboration reversal. The corresponding **orientation-plus-Holm p value is 0.92891**.
 - The task-specific reversal does not identify an isolated causal effect of AI removal because task content, sequence, transfer demands, and AI-access policy change together.
-- The construct-commensurability gate prevents shared labels from being treated automatically as a common construct or common estimand. ARRP provides an executable reporting structure, but it is not presented as an independently validated psychometric instrument or consensus standard.
+- The construct-commensurability gate prevents shared labels from being treated automatically as evidence of a common construct or common estimand. ARRP provides an executable reporting structure, but it is not presented as an independently validated psychometric instrument or consensus standard.
 
 ## Scientific scope and interpretation
 
